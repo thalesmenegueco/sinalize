@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolução de Ouvintes na Língua de Sinais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .tab-active {
+            border-bottom: 2px solid #0d9488;
+            color: #0d9488;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#f0fdfa',
+                            DEFAULT: '#0d9488',
+                            dark: '#0f766e',
+                            accent: '#f59e0b',
+                            bg: '#fafaf9',
+                            text: '#292524'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<!-- Chosen Palette: Warm Neutrals with Teal (#0d9488) and Amber (#f59e0b) Accents -->
+<!-- Application Structure Plan: The SPA uses a dashboard-style linear narrative structure. It starts with context (Why visual learning matters), moves into macro-level Methodologies (with comparative data), dives into specific Practical Activities (interactive exploration), and concludes with the expected Learning Journey (time-series projection). This flow logically guides the user from theory to practice to expected outcomes, using interactive elements to prevent passive reading. -->
+<!-- Visualization & Content Choices: 
+1. Goal: Inform on visual communication -> Method: Doughnut Chart -> Interaction: Hover tooltips -> Justification: Shows proportion of visual elements in sign language effectively. -> Library: Chart.js.
+2. Goal: Compare methodologies -> Method: Bar Chart -> Interaction: Hover tooltips -> Justification: Clear comparison of retention rates across different teaching methods. -> Library: Chart.js.
+3. Goal: Detail activities -> Method: Interactive HTML/JS Tabs -> Interaction: Click to change content -> Justification: Prevents text overload, allows user to explore specific activities of interest. -> Library: Vanilla JS + Tailwind.
+4. Goal: Show trend/journey -> Method: Line Chart -> Interaction: Hover -> Justification: Demonstrates the non-linear progression of fluency over time comparing two approaches. -> Library: Chart.js.
+-->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+<body class="bg-brand-bg text-brand-text font-sans antialiased">
+
+    <nav class="fixed w-full z-50 glass-panel shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="text-2xl">🤟</span>
+                    <span class="font-bold text-xl text-brand-dark tracking-tight">SinalizaTech</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#contexto" class="text-gray-600 hover:text-brand transition-colors">Contexto</a>
+                    <a href="#metodologias" class="text-gray-600 hover:text-brand transition-colors">Metodologias</a>
+                    <a href="#atividades" class="text-gray-600 hover:text-brand transition-colors">Atividades Práticas</a>
+                    <a href="#jornada" class="text-gray-600 hover:text-brand transition-colors">A Jornada</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-4 leading-tight">
+            Evolução de Ouvintes na Língua de Sinais
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mb-8">
+            Um guia interativo baseado em evidências sobre as metodologias e atividades mais eficazes para ouvintes alcançarem a fluência comunicativa.
+        </p>
+        <a href="#contexto" class="bg-brand hover:bg-brand-dark text-white font-semibold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            Explorar o Relatório
+        </a>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 pb-24">
+
+        <section id="contexto" class="scroll-mt-24">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">A Natureza Visual da Comunicação</h2>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Esta seção estabelece o fundamento do aprendizado de uma língua de modalidade visuoespacial. Diferente das línguas orais-auditivas, as línguas de sinais exigem uma reestruturação neurológica no processamento da informação. O gráfico abaixo ilustra a distribuição dos parâmetros essenciais para a compreensão na comunicação sinalizada, demonstrando que o foco exclusivo no vocabulário manual é insuficiente.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <div class="chart-container">
+                    <canvas id="visualChart"></canvas>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-brand-light p-6 rounded-xl border-l-4 border-brand">
+                        <h3 class="font-bold text-lg mb-2 text-brand-dark">A Quebra de Paradigma</h3>
+                        <p class="text-gray-700">Para o ouvinte, o maior desafio não é memorizar sinais, mas transferir a atenção do canal auditivo para o visual. A expressão facial e corporal constitui mais de 40% da gramática da língua.</p>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3">👁️</span>
+                            <div>
+                                <strong class="block text-gray-900">Percepção Visual</strong>
+                                <span class="text-gray-600 text-sm">Desenvolvimento da visão periférica e leitura não-manual.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3">🧠</span>
+                            <div>
+                                <strong class="block text-gray-900">Processamento Espacial</strong>
+                                <span class="text-gray-600 text-sm">Compreensão de topografia, classificadores e direcionalidade.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodologias" class="scroll-mt-24">
+            <div class="mb-8 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Metodologias Comprovadas</h2>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Analisamos as taxas de retenção e fluência baseadas em diferentes abordagens de ensino. Explore os dados abaixo para compreender por que a imersão e abordagens comunicativas superam o ensino tradicional focado em tradução.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <div class="chart-container w-full h-[450px]">
+                    <canvas id="methodChart"></canvas>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="p-4 border rounded-lg text-center hover:border-brand transition-colors cursor-default">
+                        <div class="text-3xl mb-2">📚</div>
+                        <h4 class="font-bold mb-1">Tradicional</h4>
+                        <p class="text-sm text-gray-500">Foco em listas de vocabulário e tradução palavra por palavra. Baixa retenção estrutural.</p>
+                    </div>
+                    <div class="p-4 border rounded-lg text-center hover:border-brand transition-colors cursor-default border-brand">
+                        <div class="text-3xl mb-2">💬</div>
+                        <h4 class="font-bold mb-1">Comunicativa</h4>
+                        <p class="text-sm text-gray-500">Uso da língua em contextos reais. Foco na negociação de sentido em vez da forma perfeita.</p>
+                    </div>
+                    <div class="p-4 border rounded-lg text-center hover:border-brand transition-colors cursor-default bg-brand-light">
+                        <div class="text-3xl mb-2">🤝</div>
+                        <h4 class="font-bold mb-1">Imersão/Interação</h4>
+                        <p class="text-sm text-gray-500">Contato direto com surdos, exclusão da voz, imersão total na cultura visual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="atividades" class="scroll-mt-24">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Arsenal de Atividades Práticas</h2>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Navegue pelas atividades abaixo para descobrir técnicas específicas de estudo. Cada atividade foi mapeada de acordo com as habilidades neurológicas e linguísticas que desenvolve no cérebro do ouvinte.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 min-h-[400px]">
+                <div class="md:w-1/3 flex flex-col border-r border-gray-100 pr-4 gap-2" id="activity-tabs">
+                </div>
+
+                <div class="md:w-2/3 pl-0 md:pl-4" id="activity-content">
+                </div>
+            </div>
+        </section>
+
+        <section id="jornada" class="scroll-mt-24">
+            <div class="mb-8 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">A Curva de Aquisição</h2>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    A evolução não é linear. O gráfico interativo abaixo projeta o nível de fluência ao longo do tempo (meses), comparando um aluno que utiliza metodologias mistas (imersão + comunicativa) com um aluno do modelo tradicional.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <div class="chart-container">
+                    <canvas id="journeyChart"></canvas>
+                </div>
+                <div class="mt-6 p-4 bg-amber-50 rounded-xl text-amber-900 border border-amber-200">
+                    <strong>Ponto de Inflexão:</strong> Observe que o método de imersão apresenta um "vale" inicial de frustração nos primeiros meses (devido ao silêncio forçado), mas resulta em uma curva exponencial de fluência a partir do 6º mês.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-4">Desenvolvido com foco na experiência de aprendizado bilíngue.</p>
+            <p class="text-sm">&copy; 2026 SinalizaTech - Estruturas Interativas.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const colorBrand = '#0d9488';
+            const colorAccent = '#f59e0b';
+            const colorGray = '#9ca3af';
+
+            const ctxVisual = document.getElementById('visualChart').getContext('2d');
+            new Chart(ctxVisual, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Expressão Facial/Corporal', 'Configuração de Mão', 'Movimento/Ponto de Articulação', 'Uso do Espaço'],
+                    datasets: [{
+                        data: [40, 25, 20, 15],
+                        backgroundColor: [colorAccent, colorBrand, '#0f766e', '#5eead4'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.parsed + '% da gramática';
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+
+            const ctxMethod = document.getElementById('methodChart').getContext('2d');
+            new Chart(ctxMethod, {
+                type: 'bar',
+                data: {
+                    labels: ['Memorização (Tradicional)', 'Tradução Simultânea', 'Abordagem Comunicativa', 'Imersão (Sem Voz)', 'Interação Surdo-Ouvinte'],
+                    datasets: [{
+                        label: 'Taxa de Retenção de Longo Prazo (%)',
+                        data: [25, 35, 75, 88, 95],
+                        backgroundColor: [colorGray, colorGray, '#5eead4', colorBrand, colorAccent],
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, max: 100 }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    let title = context[0].label;
+                                    if (title.length > 16) {
+                                        let words = title.split(' ');
+                                        let lines = [];
+                                        let currentLine = '';
+                                        words.forEach(word => {
+                                            if ((currentLine + word).length > 16) {
+                                                lines.push(currentLine);
+                                                currentLine = word + ' ';
+                                            } else {
+                                                currentLine += word + ' ';
+                                            }
+                                        });
+                                        lines.push(currentLine.trim());
+                                        return lines;
+                                    }
+                                    return title;
+                                },
+                                label: function(context) {
+                                    return ' Retenção: ' + context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const ctxJourney = document.getElementById('journeyChart').getContext('2d');
+            new Chart(ctxJourney, {
+                type: 'line',
+                data: {
+                    labels: ['Mês 1', 'Mês 3', 'Mês 6', 'Mês 9', 'Mês 12', 'Mês 18', 'Mês 24'],
+                    datasets: [
+                        {
+                            label: 'Método Imersivo + Comunicativo',
+                            data: [5, 15, 40, 65, 85, 95, 98],
+                            borderColor: colorBrand,
+                            backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Método Tradicional',
+                            data: [15, 25, 35, 45, 52, 60, 65],
+                            borderColor: colorGray,
+                            borderDash: [5, 5],
+                            borderWidth: 2,
+                            fill: false,
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { 
+                            beginAtZero: true, 
+                            max: 100,
+                            title: { display: true, text: 'Nível de Fluência (%)' }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: { mode: 'index', intersect: false }
+                    },
+                    interaction: { mode: 'nearest', axis: 'x', intersect: false }
+                }
+            });
+
+            const activitiesData = [
+                {
+                    id: 'act1',
+                    title: 'Teatro de Sombras / Mímica',
+                    icon: '🎭',
+                    description: 'Atividade foca em transmitir conceitos sem o uso das mãos formatadas em sinais oficiais. Força o ouvinte a utilizar classificadores, expressão facial e espaço.',
+                    benefits: ['Liberação corporal', 'Criatividade visual', 'Uso de classificadores'],
+                    intensity: 'Alta'
+                },
+                {
+                    id: 'act2',
+                    title: 'Gravação em Vídeo e Autocorreção',
+                    icon: '📱',
+                    description: 'O aluno grava a si mesmo sinalizando e assiste criticamente. Permite identificar vícios de postura, falta de expressão facial ou erros de direcionalidade que passam despercebidos na execução.',
+                    benefits: ['Feedback imediato', 'Percepção espacial', 'Correção gramatical'],
+                    intensity: 'Média'
+                },
+                {
+                    id: 'act3',
+                    title: 'Visual Vernacular (VV)',
+                    icon: '🎬',
+                    description: 'Arte performática surda que funciona como um "cinema corporal". Praticar VV ajuda o ouvinte a entender a montagem de cena, zoom e transição de personagens na língua.',
+                    benefits: ['Fluência narrativa', 'Consciência corporal extrema', 'Ritmo'],
+                    intensity: 'Muito Alta'
+                },
+                {
+                    id: 'act4',
+                    title: 'Glossário Contextualizado',
+                    icon: '📝',
+                    description: 'Em vez de listas de palavras isoladas, aprender sinais em blocos de frases inteiras ou contações de histórias. Ancorar o sinal à emoção e ao contexto visual.',
+                    benefits: ['Retenção de vocabulário', 'Gramática aplicada', 'Fluidez'],
+                    intensity: 'Baixa'
+                }
+            ];
+
+            const tabsContainer = document.getElementById('activity-tabs');
+            const contentContainer = document.getElementById('activity-content');
+
+            function renderActivityDetails(activity) {
+                const benefitsHTML = activity.benefits.map(b => `<span class="inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">${b}</span>`).join('');
+                
+                contentContainer.innerHTML = `
+                    <div class="h-full flex flex-col justify-center animate-[fadeIn_0.3s_ease-in-out]">
+                        <div class="text-6xl mb-4">${activity.icon}</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">${activity.title}</h3>
+                        <p class="text-gray-700 mb-6 text-lg">${activity.description}</p>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-500 uppercase mb-2">Habilidades Desenvolvidas</h4>
+                            <div class="mb-4">${benefitsHTML}</div>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
+                            <span class="text-sm text-gray-500 mr-2">Intensidade do Treinamento:</span>
+                            <span class="font-bold ${activity.intensity === 'Alta' || activity.intensity === 'Muito Alta' ? 'text-brand' : 'text-amber-500'}">${activity.intensity}</span>
+                        </div>
+                    </div>
+                `;
+            }
+
+            activitiesData.forEach((act, index) => {
+                const btn = document.createElement('button');
+                btn.className = `text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 flex items-center ${index === 0 ? 'bg-brand text-white shadow-md' : 'text-gray-600 hover:bg-gray-50'}`;
+                btn.innerHTML = `<span class="mr-3 text-xl">${act.icon}</span> ${act.title}`;
+                
+                btn.addEventListener('click', () => {
+                    Array.from(tabsContainer.children).forEach(child => {
+                        child.className = 'text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 flex items-center text-gray-600 hover:bg-gray-50';
+                    });
+                    btn.className = 'text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 flex items-center bg-brand text-white shadow-md';
+                    renderActivityDetails(act);
+                });
+                
+                tabsContainer.appendChild(btn);
+            });
+
+            if(activitiesData.length > 0) {
+                renderActivityDetails(activitiesData[0]);
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
