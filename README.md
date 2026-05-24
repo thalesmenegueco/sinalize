@@ -64,3 +64,7 @@ Aqui está para você, agora recursos financeiro, a metodologia ou a hora do cur
 2 - Será que apenas os surdos merecem ser entendidos? Pense naquele(a) estrangeiro(a) que você vê no trabalho ou em outra situação, esta pessoa merece ser entendida. Você não precisa ser fluente em todas as línguas, você pode começar por aprender o básico do básico.
 
 3 - Seja humano. Esta é uma das lições mais importantes que a cultura surda me ensinou. Você pode descrever de vários modos: ter empatia, tentar se colocar no lugar do outro, pensar em como o outro se sente, mostrar respeito, ser educado etc. Em resumo: **seja humano**. 
+
+## Para desenvolvedores
+
+Porta para testes: 5500

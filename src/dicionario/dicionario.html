@@ -56,7 +56,22 @@
         <!-- Header -->
         <header class="text-center mb-10">
             <h1 class="text-4xl font-bold text-tealMain mb-2 flex items-center justify-center gap-2">
-                <svg class="w-8 h-8 text-amberAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dictionary-icon">
+                  <!-- Book Cover and Pages Outline -->
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                  
+                  <!-- Spine Crease -->
+                  <path d="M8 2v15" />
+                  
+                  <!-- Dictionary Letter A -->
+                  <path d="M12 8l2-4 2 4M13 6h2" />
+                  
+                  <!-- Dictionary Letter Z -->
+                  <path d="M12 11h4l-4 4h4" />
+                  
+                  <!-- Side Index Tabs -->
+                  <path d="M20 4h2M20 8h2M20 12h2M20 16h2" />
+                </svg>
                 Sinalize!
             </h1>
             <p class="text-labelGray text-lg">Seu dicionário acessível de Libras</p>
@@ -79,7 +94,7 @@
                     id="search-btn"
                     class="bg-tealMain hover:bg-tealHover text-white font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-tealMain"
                 >
-                    Mostrar palavra
+                    Mostrar
                 </button>
             </div>
             
@@ -108,8 +123,7 @@
             
             <div class="relative w-full aspect-video bg-bgLight rounded-lg overflow-hidden border border-borderGray flex items-center justify-center">
                 
-                <!-- Player de Vídeo -->
-                <!-- Adicionamos o referrerpolicy="no-referrer" para burlar o bloqueio de Hotlink do servidor de origem -->
+                <!-- Adicionamos o preload="none" (ou o lazy se houver lazy-loading script) para não baixar o vídeo sem necessidade -->
                 <video 
                     id="secondary-video" 
                     class="w-full h-full object-cover hidden" 
@@ -117,6 +131,7 @@
                     loop 
                     muted 
                     playsinline 
+                    preload="none"
                     referrerpolicy="no-referrer">
                 </video>
                 
@@ -171,20 +186,38 @@
                 this.videoLoading = document.getElementById('video-loading');
                 this.videoErrorFallback = document.getElementById('video-error-fallback');
 
+                // Memória para o mapeamento de IDs dos vídeos
+                this.videoMap = {};
+
                 this.bindEvents();
                 this.initVLibras();
+                
+                // Inicia o carregamento do JSON em background assim que a página abre
+                this.loadVideoMap();
+            }
+
+            /**
+             * Busca o JSON com os metadados (IDs) e guarda em memória.
+             */
+            async loadVideoMap() {
+                try {
+                    // Ajuste o caminho se o seu JSON estiver em outra pasta
+                    const response = await fetch('./assets/videos_map.json');
+                    if (!response.ok) throw new Error("Erro na rede");
+                    
+                    this.videoMap = await response.json();
+                } catch (error) {
+                    console.error("Falha ao carregar o mapa de vídeos:", error);
+                }
             }
 
             initVLibras() {
                 if (window.VLibras) {
                     new window.VLibras.Widget('https://vlibras.gov.br/app');
-                } else {
-                    console.error('Falha ao carregar o VLibras Plugin.');
                 }
             }
 
             bindEvents() {
-                // Disparo de buscas
                 this.button.addEventListener('pointerdown', (e) => {
                     e.preventDefault(); 
                     this.handleSearch();
@@ -200,20 +233,16 @@
 
                 this.input.addEventListener('input', () => this.hideError());
 
-                // --- NOVO: Tratamento de Eventos do Vídeo ---
-                
-                // Se o vídeo carregar com sucesso e puder ser reproduzido:
+                // Se o vídeo carregar com sucesso
                 this.secondaryVideo.addEventListener('canplay', () => {
                     this.videoLoading.classList.add('hidden');
                     this.videoErrorFallback.classList.add('hidden');
                     this.secondaryVideo.classList.remove('hidden');
                 });
 
-                // Se o vídeo falhar (Erro 404, Bloqueio de CORS/Mixed Content):
+                // Se o vídeo falhar (Erro 404, etc)
                 this.secondaryVideo.addEventListener('error', () => {
-                    this.secondaryVideo.classList.add('hidden');
-                    this.videoLoading.classList.add('hidden');
-                    this.videoErrorFallback.classList.remove('hidden');
+                    this.showVideoError();
                 });
             }
 
@@ -237,18 +266,49 @@
                 this.input.classList.remove('border-amberAccent', 'ring-1', 'ring-amberAccent');
             }
 
+            showVideoError() {
+                this.secondaryVideo.classList.add('hidden');
+                this.videoLoading.classList.add('hidden');
+                this.videoErrorFallback.classList.remove('hidden');
+            }
+
+            /**
+             * Lógica de resolução e fallback para o nome dos vídeos
+             */
             updateSecondaryVideo(word) {
-                // Exibe a sessão inteira e reseta o player para o estado "Loading"
+                // Prepara a UI para "Carregando"
                 this.videoSection.classList.remove('hidden');
                 this.secondaryVideo.classList.add('hidden');
                 this.videoErrorFallback.classList.add('hidden');
                 this.videoLoading.classList.remove('hidden');
 
-                // Tenta buscar a nova URL
+                // 1. Normalização da string (ex: "Abençoar" -> "abencoar")
                 const normalizedWord = word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
                 
-                // Nota: Usando HTTPS. Se o site alvo não suportar, cairá no evento 'error' que criamos acima.
-                const videoUrl = `https://www.acessibilidadebrasil.org.br/libras_3/public/media/palavras/videos/${normalizedWord}Sm_Prog001.mp4`;
+                // 2. Busca o ID usando a palavra exata
+                let finalWord = normalizedWord;
+                let videoId = this.videoMap[finalWord];
+
+                // 3. Fallback: Se não achou, adiciona "1" (ex: "abencoar" -> "abencoar1")
+                if (!videoId) {
+                    finalWord = `${normalizedWord}1`;
+                    videoId = this.videoMap[finalWord];
+                }
+
+                // 4. Validação: Se mesmo com o "1" a palavra não existir no JSON, mostra o erro.
+                if (!videoId) {
+                    console.warn(`Palavra '${word}' não encontrada no dicionário de vídeos.`);
+                    this.showVideoError();
+                    return;
+                }
+
+                // 5. Constrói a URL final (Juntando Palavra + __ + ID)
+                const baseUrl = "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/sinalize-public-project"; 
+                
+                // Formato exigido: abacaxi__5.mp4
+                const videoUrl = `${baseUrl}/${finalWord}__${videoId}.mp4`;
+                console.log(videoUrl);
+                
 
                 this.secondaryVideo.src = videoUrl;
                 this.secondaryVideo.load();
@@ -258,7 +318,6 @@
                 this.targetWord.textContent = word;
                 this.displayArea.classList.remove('hidden');
                 
-                // Chama a atualização do vídeo externo
                 this.updateSecondaryVideo(word);
 
                 setTimeout(() => {
