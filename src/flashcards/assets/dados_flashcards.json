@@ -1,0 +1,14 @@
+[
+    {
+        "código": 101,
+        "português": "Tudo bem com você?",
+        "sinais": "voce_saude_bem",
+        "tags": ["Apresentação", "Básico"]
+    },
+    {
+        "código": 102,
+        "português": "Prazer em conhecer",
+        "sinais": "conhecer_gostar",
+        "tags": ["Apresentação", "Social"]
+    }
+]

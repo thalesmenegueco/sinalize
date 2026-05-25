@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
     <title>Sinalize! - Flashcards de Libras</title>
     <style>
         /* ==========================================================================
@@ -14,14 +16,14 @@
             --teal-dark: #0f766e;
             --teal-light: #f0fdfa;
             --amber-accent: #f59e0b;
-            
+
             /* Neutros */
             --bg-offwhite: #fafaf9;
             --text-main: #292524;
             --text-secondary: #4b5563;
             --text-tertiary: #9ca3af;
             --card-bg: #ffffff;
-            
+
             /* Sombras e Transições */
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -56,7 +58,7 @@
         }
 
         /* ==========================================================================
-           3. CONTROLES DA INTERFACE (Toggle e Navegação)
+           3. CONTROLES DA INTERFACE
            ========================================================================== */
         .controls-container {
             display: flex;
@@ -118,13 +120,13 @@
         }
 
         /* ==========================================================================
-           4. FLASHCARD (Estrutura 3D e Animações)
+           4. FLASHCARD (Estrutura 3D, Animações e Isolamento de Camadas)
            ========================================================================== */
         .flashcard-scene {
             width: 100%;
             max-width: 600px;
-            height: 500px;
-            perspective: 1000px; /* Necessário para o efeito 3D */
+            height: 400px;
+            perspective: 1000px;
             cursor: pointer;
         }
 
@@ -138,7 +140,6 @@
             border-radius: 16px;
         }
 
-        /* Classe ativada via JS para girar o card */
         .flashcard-inner.is-flipped {
             transform: rotateY(180deg);
         }
@@ -156,33 +157,30 @@
             justify-content: center;
             padding: 2rem;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-
+        /* Lógica de bloqueio de cliques nas faces escondidas */
         .flashcard-front {
-        /* Garante que a frente receba cliques normalmente */
             pointer-events: auto;
-        }
-
-        .flashcard-inner.is-flipped .flashcard-front {
-            pointer-events: none; /* Desativa a frente quando virada para trás */
         }
 
         .flashcard-back {
             transform: rotateY(180deg);
             background-color: var(--teal-light);
+            pointer-events: none;
+        }
 
-            /* Desativa cliques na parte de trás enquanto ela está escondida */
+        .flashcard-inner.is-flipped .flashcard-front {
             pointer-events: none;
         }
 
         .flashcard-inner.is-flipped .flashcard-back {
-            pointer-events: auto; /* Reativa a parte de trás quando virada */
+            pointer-events: auto;
         }
 
         /* ==========================================================================
-           5. CONTEÚDO DO CARD (Mídia e Texto)
+           5. CONTEÚDO DO CARD E PLAYER DE VÍDEO
            ========================================================================== */
         .card-content {
             flex-grow: 1;
@@ -201,11 +199,11 @@
         .libras-video-container {
             width: 100%;
             height: 100%;
-            max-height: 350px;
+            max-height: 250px;
             border-radius: 8px;
             overflow: hidden;
             background-color: var(--text-main);
-            position: relative; 
+            position: relative;
             z-index: 10;
         }
 
@@ -213,10 +211,14 @@
             z-index: 0;
         }
 
-        .libras-video-container iframe {
+        /* Novo estilo para a tag <video> nativa */
+        .libras-video-container video {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
+            /* Faz o vídeo preencher a área sem distorcer */
+            background-color: black;
+            outline: none;
         }
 
         .prompt-text {
@@ -242,9 +244,9 @@
             font-weight: bold;
             font-size: 1rem;
             box-shadow: var(--shadow-md);
-            cursor: pointer; /* Modificado: retorna o cursor de clique no botão */
+            cursor: pointer;
         }
-        
+
         .tags {
             position: absolute;
             top: 1rem;
@@ -252,7 +254,7 @@
             display: flex;
             gap: 0.5rem;
         }
-        
+
         .tag {
             background-color: var(--teal-light);
             color: var(--teal-dark);
@@ -263,46 +265,36 @@
         }
     </style>
 </head>
+
 <body>
 
     <h1>Sinalize! 🤟</h1>
 
     <div class="controls-container">
-        <!-- Toggle de Modos -->
         <div class="toggle-container" role="radiogroup" aria-label="Modo de Estudo">
             <button class="toggle-btn active" id="btn-mode-libras" onclick="setMode('libras')">Libras na Frente</button>
             <button class="toggle-btn" id="btn-mode-pt" onclick="setMode('pt')">Português na Frente</button>
         </div>
     </div>
 
-    <!-- Cena 3D do Flashcard -->
     <div class="flashcard-scene" onclick="toggleFlip(event)">
         <div class="flashcard-inner" id="flashcard">
-            
-            <!-- Face Frontal -->
+
             <div class="flashcard-face flashcard-front">
                 <div class="tags" id="front-tags"></div>
-                <div class="card-content" id="front-content">
-                    <!-- Injetado via JS -->
-                </div>
-                <div class="prompt-text" id="front-prompt">
-                    <!-- Injetado via JS -->
-                </div>
+                <div class="card-content" id="front-content"></div>
+                <div class="prompt-text" id="front-prompt"></div>
                 <button class="btn-flip">Resposta</button>
             </div>
 
-            <!-- Face Traseira -->
             <div class="flashcard-face flashcard-back">
                 <div class="answer-hint">Seria algo parecido com isso:</div>
-                <div class="card-content" id="back-content">
-                    <!-- Injetado via JS -->
-                </div>
+                <div class="card-content" id="back-content"></div>
             </div>
 
         </div>
     </div>
 
-    <!-- Controles de Navegação -->
     <div class="controls-container">
         <div class="nav-buttons">
             <button class="btn-nav" onclick="prevCard()">Anterior</button>
@@ -313,28 +305,27 @@
 
     <script>
         /* ==========================================================================
-           1. CAMADA DE DADOS (Simulando o JSON externo)
+           1. CAMADA DE DADOS (Mock atualizado para refletir URLs de um Bucket)
            ========================================================================== */
+        // Note que o atributo 'sinais' agora aponta para arquivos .mp4 diretos
         const dadosJSON = `[
-            {
-                "código": 101,
-                "português": "Qual o seu nome?",
-                "sinais": "https://drive.google.com/file/d/1ArkF_TGGlfbRX79QUY0teq1g24bjABvn/view?usp=sharing",
-                "tags": ["Apresentação", "Básico"]
-            },
-            {
-                "código": 102,
-                "português": "Prazer em conhecer",
-                "sinais": "https://drive.google.com/file/d/18RlTCDdsvMW30pehKvuMHF5SYcaKHe3E/view",
-                "tags": ["Apresentação", "Social"]
-            }
-        ]`;
+    {
+        "código": 101,
+        "português": "Tudo bem com você?",
+        "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_voce_saude_bem.mp4",
+        "tags": ["Apresentação", "Básico"]
+    },
+    {
+        "código": 102,
+        "português": "Prazer em conhecer",
+        "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_conhecer_gostar.mp4",
+        "tags": ["Apresentação", "Social"]
+    }
+]
+`;
 
         const flashcards = JSON.parse(dadosJSON);
 
-        /* ==========================================================================
-           2. ESTADO DA APLICAÇÃO
-           ========================================================================== */
         const AppState = {
             currentIndex: 0,
             mode: 'libras', // 'libras' | 'pt'
@@ -342,36 +333,12 @@
         };
 
         /* ==========================================================================
-           3. UTILITÁRIOS E SANITIZADORES
+           2. LÓGICA DE RENDERIZAÇÃO
            ========================================================================== */
-        /**
-         * Sanitiza URLs do Google Drive para o formato seguro de iFrame (preview)
-         * Resolve o problema comum de "Refused to display in a frame because it set 'X-Frame-Options' to 'SAMEORIGIN'"
-         */
-        function getSafeDriveEmbedUrl(url) {
-            try {
-                // Tenta extrair o ID usando Expressão Regular (padrão do Google Drive)
-                const match = url.match(/\/d\/(.+?)\//);
-                if (match && match[1]) {
-                    const videoId = match[1];
-                    return `https://drive.google.com/file/d/${videoId}/preview`;
-                }
-                // Fallback de segurança se o regex falhar mas for url do drive
-                return url; 
-            } catch (e) {
-                console.error("Erro ao sanitizar URL de vídeo", e);
-                return "";
-            }
-        }
 
-        /* ==========================================================================
-           4. LÓGICA DE RENDERIZAÇÃO
-           ========================================================================== */
-        
         function renderCard() {
             const card = flashcards[AppState.currentIndex];
-            const safeVideoUrl = getSafeDriveEmbedUrl(card.sinais);
-            
+
             const DOM = {
                 frontContent: document.getElementById('front-content'),
                 frontPrompt: document.getElementById('front-prompt'),
@@ -380,25 +347,22 @@
                 counter: document.getElementById('card-counter')
             };
 
-            // Renderiza Tags
             DOM.tags.innerHTML = card.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
             DOM.counter.innerText = `${AppState.currentIndex + 1} / ${flashcards.length}`;
 
-            // Componentes reutilizáveis
+            // Componente de Vídeo Nativo atualizado
             const videoHTML = `
                 <div class="libras-video-container">
-                    <iframe src="${safeVideoUrl}" allow="autoplay; encrypted-media" allowfullscreen title="Vídeo em Libras"></iframe>
+                    <video src="${card.sinais}" controls playsinline preload="metadata" controlsList="nodownload" title="Vídeo em Libras"></video>
                 </div>`;
+
             const textHTML = `<div class="portuguese-text">${card.português}</div>`;
 
-            // Aplica a lógica baseada no modo selecionado
             if (AppState.mode === 'libras') {
-                // Modo 1: Vídeo na frente, Português atrás
                 DOM.frontContent.innerHTML = videoHTML;
                 DOM.frontPrompt.innerText = "🤔💭 Pare e Pense: como é em português?";
                 DOM.backContent.innerHTML = textHTML;
             } else {
-                // Modo 2: Português na frente, Vídeo atrás
                 DOM.frontContent.innerHTML = textHTML;
                 DOM.frontPrompt.innerText = "🤔💭 Pare e Pense: como é em Libras?";
                 DOM.backContent.innerHTML = videoHTML;
@@ -406,26 +370,28 @@
         }
 
         /* ==========================================================================
-           5. INTERAÇÕES E CONTROLES
+           3. INTERAÇÕES E CONTROLES
            ========================================================================== */
 
         function toggleFlip(event) {
-            // 1. CHECAGEM DE SEGURANÇA: O clique veio de dentro do vídeo?
-            // Se o elemento clicado (target) está dentro da classe '.libras-video-container',
-            // nós usamos 'return' para cancelar a função e não virar a carta.
+            // Se o clique for no elemento do vídeo, cancela a ação de virar o card
             if (event && event.target.closest('.libras-video-container')) {
-                // document.querySelector('[aria-label="Player de vídeo"]').click(); // MUDADO: seleciona o elemento section que está passando o vídeo e imita um clique
-                return; 
+                return;
             }
 
-            // 2. Comportamento normal de virar a carta
             const flashcardElement = document.getElementById('flashcard');
             AppState.isFlipped = !AppState.isFlipped;
-    
+
             if (AppState.isFlipped) {
                 flashcardElement.classList.add('is-flipped');
             } else {
                 flashcardElement.classList.remove('is-flipped');
+            }
+
+            // Pausa o vídeo se ele estiver tocando quando o card virar
+            const video = document.querySelector('.libras-video-container video');
+            if (video) {
+                video.pause();
             }
         }
 
@@ -436,17 +402,13 @@
 
         function setMode(mode) {
             if (AppState.mode === mode) return;
-            
             AppState.mode = mode;
-            
-            // Atualiza UI dos botões
+
             document.getElementById('btn-mode-libras').classList.toggle('active', mode === 'libras');
             document.getElementById('btn-mode-pt').classList.toggle('active', mode === 'pt');
-            
-            // Se estiver virado, desvira antes de re-renderizar para não bugar visualmente
-            if(AppState.isFlipped) {
+
+            if (AppState.isFlipped) {
                 resetFlipState();
-                // Aguarda a animação de desvirar acabar para trocar o conteúdo
                 setTimeout(renderCard, 300);
             } else {
                 renderCard();
@@ -476,11 +438,11 @@
             }
         }
 
-        // Inicializa a aplicação
         window.onload = () => {
             renderCard();
         };
 
     </script>
 </body>
+
 </html>
