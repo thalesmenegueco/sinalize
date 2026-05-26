@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
-    
+    <link href="./src/output.css" rel="stylesheet">
     <title>Sinalize! - Flashcards de Libras</title>
     <style>
         /* ==========================================================================
@@ -39,8 +39,9 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
-        
+
         #logo-back-index {
             text-decoration: none;
         }
@@ -273,9 +274,23 @@
 
 <body>
     <a href="../../index.html" id="logo-back-index">
-        <h1>Sinalize! 🤟</h1>
+        <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="7" y="3" width="22" height="22" rx="3" fill="#E2E8F0" />
+
+                <rect x="3" y="7" width="22" height="22" rx="3" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"
+                    stroke-linejoin="round" />
+
+                <path d="M4 10H24V8C24 6.89543 23.1046 6 22 6H6C4.89543 6 4 6.89543 4 8V10Z" fill="#F59E0B" />
+                <line x1="3" y1="10" x2="25" y2="10" stroke="#F59E0B" stroke-width="2" />
+
+                <line x1="7" y1="15" x2="17" y2="15" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" />
+                <line x1="7" y1="20" x2="21" y2="20" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            Sinalize! 🤟
+        </h1>
     </a>
-    
+
     <div class="controls-container">
         <div class="toggle-container" role="radiogroup" aria-label="Modo de Estudo">
             <button class="toggle-btn active" id="btn-mode-libras" onclick="setMode('libras')">Libras na Frente</button>
@@ -323,14 +338,20 @@
     },
     {
         "código": 102,
-        "português": "Prazer em conhecer",
-        "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_conhecer_gostar.mp4",
+        "português": "Meu nome é ____",
+        "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_eu_nome_(datilologia).mp4",
         "tags": ["Apresentação", "Social"]
     },
     {
-        "código":1,
-        "português": "",
-        "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_",
+        "código": 103,
+        "português": "Qual o seu nome?",
+        "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_voce_nome.mp4",
+        "tags": ["Apresentação", "Social"]
+    },
+    {
+        "código":104,
+        "português": "Prazer em conhecer",
+        "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_conhecer_gostar.mp4",
         "tags": ["Apresentação","Básico"]
     }
 ]

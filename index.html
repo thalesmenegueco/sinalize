@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link href="./src/output.css" rel="stylesheet">
     <title>Sinalize! - Início</title>
-    
+
     <style>
         :root {
             /* Paleta de Cores - Sinalize! */
@@ -20,25 +21,25 @@
             /* Cinza Neutro (Labels e descrições) */
             --border-color: #9ca3af;
             /* Cinza Neutro (Bordas) */
-            
+
             --teal-main: #0d9488;
             /* Teal Principal (Interações e Identidade) */
             --teal-dark: #0f766e;
             /* Teal Escuro (Hover e Títulos) */
             --teal-light: #f0fdfa;
             /* Teal Claro (Backgrounds suaves) */
-            
+
             --amber-accent: #f59e0b;
             /* Amber (Acentos e badges) */
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
-        
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -46,7 +47,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
-        
+
         /* ==== Header & Navegação ==== */
         header {
             background-color: var(--card-bg);
@@ -56,10 +57,11 @@
             justify-content: center;
             border-bottom: 1px solid rgba(156, 163, 175, 0.2);
         }
+
         #logo-back-index {
             text-decoration: none;
         }
-        
+
         .brand-logo {
             font-size: 1.75rem;
             font-weight: 800;
@@ -69,7 +71,7 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         /* ==== Layout Principal ==== */
         main {
             flex: 1;
@@ -79,25 +81,25 @@
             justify-content: center;
             padding: 4rem 1rem;
         }
-        
+
         .hero-section {
             text-align: center;
             max-width: 600px;
             margin-bottom: 4rem;
         }
-        
+
         .hero-section h1 {
             font-size: 2.5rem;
             color: var(--teal-dark);
             margin-bottom: 1rem;
         }
-        
+
         .hero-section p {
             font-size: 1.125rem;
             color: var(--text-muted);
             line-height: 1.6;
         }
-        
+
         /* ==== Grid de Navegação (Cards) ==== */
         .nav-grid {
             display: grid;
@@ -106,7 +108,7 @@
             width: 100%;
             max-width: 800px;
         }
-        
+
         .nav-card {
             background-color: var(--card-bg);
             border: 1px solid rgba(156, 163, 175, 0.3);
@@ -121,14 +123,14 @@
             position: relative;
             transition: all 0.3s ease;
         }
-        
+
         /* Micro-interação focada em UX */
         .nav-card:hover {
             transform: translateY(-5px);
             border-color: var(--teal-main);
             box-shadow: 0 10px 25px rgba(13, 148, 136, 0.1);
         }
-        
+
         .card-icon {
             background-color: var(--teal-light);
             color: var(--teal-main);
@@ -142,24 +144,24 @@
             margin-bottom: 1.5rem;
             transition: background-color 0.3s ease;
         }
-        
+
         .nav-card:hover .card-icon {
             background-color: var(--teal-main);
             color: var(--card-bg);
         }
-        
+
         .nav-card h2 {
             font-size: 1.5rem;
             color: var(--text-main);
             margin-bottom: 0.5rem;
         }
-        
+
         .nav-card p {
             color: var(--text-muted);
             font-size: 1rem;
             line-height: 1.5;
         }
-        
+
         /* Badge visual usando o Amber da paleta */
         .badge {
             position: absolute;
@@ -174,7 +176,7 @@
             letter-spacing: 0.5px;
             box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
         }
-        
+
         /* ==== Footer ==== */
         footer {
             padding: 2rem;
@@ -183,26 +185,36 @@
             font-size: 0.875rem;
         }
     </style>
-    
+
 </head>
 
 <body>
-    
+
     <header>
         <a href="../../index.html" id="logo-back-index">
             <div class="brand-logo">
                 <span>🤟</span> Sinalize!
             </div>
         </a>
-        
+
     </header>
-    
+
     <main>
         <section class="hero-section">
-            <h1>Aprenda Libras na Prática</h1>
-            <p>Sua plataforma minimalista e interativa para consultar sinais e treinar seu vocabulário diariamente.</p>
+            <h1 style="display: flex;align-items: center;flex-direction: column;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 4L4 14H7V26C7 27.1046 7.89543 28 9 28H23C24.1046 28 25 27.1046 25 26V14H28L16 4Z"
+                        fill="#F1F5F9" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+
+                    <path d="M13 28V18C13 17.4477 13.4477 17 14 17H18C18.5523 17 19 17.4477 19 18V28" stroke="#F59E0B"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Aprenda Libras na Prática</span>
+            </h1>
+            <p>Sua plataforma minimalista e interativa para aprender a sinalizar e treinar sua comunicação.</p>
         </section>
-        
+
         <section class="nav-grid">
             <a href="src/dicionario/dicionario.html" class="nav-card" aria-label="Acessar o Dicionário de Libras">
                 <div class="badge">API VLibras</div>
@@ -210,7 +222,7 @@
                 <h2>Dicionário</h2>
                 <p>Busque qualquer palavra em português e veja a tradução em sinais instantaneamente.</p>
             </a>
-            
+
             <a href="src/flashcards/flashcards.html" class="nav-card" aria-label="Acessar os Flashcards Práticos">
                 <div class="badge">Prática</div>
                 <div class="card-icon">🎴</div>
@@ -219,11 +231,11 @@
             </a>
         </section>
     </main>
-    
+
     <footer>
         <p>&copy; 2026 Sinalize! — Plataforma de Acessibilidade e Aprendizado.</p>
     </footer>
-    
+
 </body>
 
 </html>
