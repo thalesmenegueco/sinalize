@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+    
     <title>Sinalize! - Flashcards de Libras</title>
     <style>
         /* ==========================================================================
@@ -38,6 +39,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        
+        #logo-back-index {
+            text-decoration: none;
         }
 
         body {
@@ -125,7 +130,7 @@
         .flashcard-scene {
             width: 100%;
             max-width: 600px;
-            height: 400px;
+            height: 440px;
             perspective: 1000px;
             cursor: pointer;
         }
@@ -199,7 +204,7 @@
         .libras-video-container {
             width: 100%;
             height: 100%;
-            max-height: 250px;
+            max-height: 280px;
             border-radius: 8px;
             overflow: hidden;
             background-color: var(--text-main);
@@ -267,9 +272,10 @@
 </head>
 
 <body>
-
-    <h1>Sinalize! 🤟</h1>
-
+    <a href="../../index.html" id="logo-back-index">
+        <h1>Sinalize! 🤟</h1>
+    </a>
+    
     <div class="controls-container">
         <div class="toggle-container" role="radiogroup" aria-label="Modo de Estudo">
             <button class="toggle-btn active" id="btn-mode-libras" onclick="setMode('libras')">Libras na Frente</button>
@@ -320,6 +326,12 @@
         "português": "Prazer em conhecer",
         "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_conhecer_gostar.mp4",
         "tags": ["Apresentação", "Social"]
+    },
+    {
+        "código":1,
+        "português": "",
+        "sinais": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/flashcard-page/flashcard-page_",
+        "tags": ["Apresentação","Básico"]
     }
 ]
 `;
