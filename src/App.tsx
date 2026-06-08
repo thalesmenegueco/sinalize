@@ -1,51 +1,44 @@
-import type { ReactNode } from 'react';
 import './App.css'
-import Header from './shared/header/Header';
-import Footer from './shared/footer/Footer';
+import { Routes, Route } from 'react-router-dom';
 
-interface LayoutProps {
-  children: ReactNode;
+// Importando as páginas
+import HomePage from './pages/home-page.tsx'
+import DictionaryPage from './pages/dictionary-page.tsx'
+import CoursesPage from './pages/courses-page.tsx'
 
-}
-
-function App({ children }: LayoutProps) {
-
-
+function App() {
   return (
     <>
       {/* 
       Paleta de Cores - Sinalize!
 
-      #fafaf9;
-      Off-white (Fundo da página)
-
-      #ffffff;
-      Branco (Cards)
-
-      #292524;
-      Cinza Quase Preto (Texto Principal)
-
-      #6b7280;
-      Cinza Neutro (Labels e descrições)
-
-      #9ca3af; 
-      Cinza Neutro (Bordas)
-
-      #0d9488;
-      Teal Principal (Interações e Identidade)
-
-      #0f766e;
-      Teal Escuro (Hover e Títulos)
-
-      #f0fdfa;
-      Teal Claro (Backgrounds suaves)
-
-      #f59e0b;
-      Amber (Acentos e badges)
+      #fafaf9|Off-white (Fundo da página)
+      #ffffff|Branco (Cards)
+      #292524|Cinza Quase Preto (Texto Principal)
+      #6b7280|Cinza Neutro (Labels e descrições)
+      #9ca3af|Cinza Neutro (Bordas)
+      #0d9488|Teal Principal (Interações e Identidade)
+      #0f766e|Teal Escuro (Hover e Títulos)
+      #f0fdfa|Teal Claro (Backgrounds suaves)
+      #f59e0b|Amber (Acentos e badges)
       */}
+
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/dictionary" element={<DictionaryPage />} />
+          
+          {/* Rota de Fallback para exibir um "404 Customizado" no frontend */}
+          <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+        </Routes>
+      </main>
+
+      {/*
       <Header />
-      {children} {/* The PageContent already contains the h1 and the main content */}
+      {children}
       <Footer />
+      */}
     </>
   )
 }

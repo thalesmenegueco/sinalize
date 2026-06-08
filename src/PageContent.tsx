@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react';
+import Header from './shared/header/Header';
+import Footer from './shared/footer/Footer';
 
 interface PageContentProps {
     pageTitle: string;
@@ -10,6 +12,7 @@ interface PageContentProps {
 function PageContent({pageTitle, description,  imgUrl, children }: PageContentProps) {
     return (
         <>
+            <Header />
             <main className="flex-1 flex flex-col items-center justify-center py-16 px-4">
                 <section className="text-center text-[2.5rem] text-[#0f766e] max-w-150 mb-8">
                     <h1 className="flex items-center flex-col mb-4">
@@ -22,6 +25,7 @@ function PageContent({pageTitle, description,  imgUrl, children }: PageContentPr
 
                 {children} {/* Aqui é onde o componente de cada página será renderizado */}
             </main>
+            <Footer />
         </>
     );
 }
