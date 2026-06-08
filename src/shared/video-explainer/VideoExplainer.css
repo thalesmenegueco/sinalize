@@ -1,0 +1,135 @@
+/* Variáveis baseadas na sua paleta */
+:root {
+  --bg-light: #fafaf9;
+  --card-white: #ffffff;
+  --text-main: #292524;
+  --teal-main: #0d9488;
+  --teal-hover: #0f766e;
+  --teal-light: #f0fdfa;
+  --amber-accent: #f59e0b;
+  --border-gray: #9ca3af;
+  --label-gray: #6b7280;
+}
+
+/* --- Botão de Gatilho --- */
+.video-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--teal-light);
+  color: var(--teal-main);
+  border: 1px solid var(--teal-main);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.video-trigger-btn:hover {
+  background-color: var(--teal-main);
+  color: var(--card-white);
+}
+
+.play-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Overlay do Modal --- */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(41, 37, 36, 0.75); /* --text-main com opacidade */
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Garante que fique acima de tudo */
+  padding: 1rem; /* Margem segura para mobile */
+}
+
+/* --- Conteúdo/Janela do Modal --- */
+.video-modal-content {
+  background-color: var(--card-white);
+  width: 100%;
+  max-width: 800px; /* Tamanho máximo para Desktop */
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* --- Cabeçalho do Modal --- */
+.video-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-gray);
+  background-color: var(--bg-light);
+}
+
+.video-modal-title {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.video-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--label-gray);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.video-close-btn:hover {
+  background-color: var(--border-gray);
+  color: var(--card-white);
+}
+
+/* --- Container do Vídeo (Aspect Ratio) --- */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Otimizado nativamente para formato de vídeo */
+  background-color: #000;
+}
+
+.video-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Garante que o vídeo não seja cortado e mantenha a proporção real */
+  background-color: #000;
+}
+
+/* Animação suave de entrada */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

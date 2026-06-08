@@ -1,0 +1,28 @@
+:root {
+  /* Paleta de Cores - Sinalize! */
+  --bg-color: #fafaf9;
+  /* Off-white (Fundo da página) */
+  --card-bg: #ffffff;
+  /* Branco (Cards) */
+  --text-main: #292524;
+  /* Cinza Quase Preto (Texto Principal) */
+  --text-muted: #6b7280;
+  /* Cinza Neutro (Labels e descrições) */
+  --border-color: #9ca3af;
+  /* Cinza Neutro (Bordas) */
+
+  --teal-main: #0d9488;
+  /* Teal Principal (Interações e Identidade) */
+  --teal-dark: #0f766e;
+  /* Teal Escuro (Hover e Títulos) */
+  --teal-light: #f0fdfa;
+  /* Teal Claro (Backgrounds suaves) */
+
+  --amber-accent: #f59e0b;
+  /* Amber (Acentos e badges) */
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}

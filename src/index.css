@@ -1,0 +1,11 @@
+@import "tailwindcss"
+
+/* * Hack de Acessibilidade/UX: Impede a tela de piscar com a seleção 
+ * azul padrão nativa do SO quando o VLibras for forçado via evento sintético.
+ 
+.vlibras-target-word::selection {
+    background: transparent;
+    color: inherit;
+}
+
+*/
