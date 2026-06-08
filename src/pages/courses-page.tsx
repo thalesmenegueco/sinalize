@@ -10,7 +10,7 @@ function CoursesPage() {
       <PageContent
         pageTitle="Cursos de Libras"
         description="Cursos com ênfase em comunicação desde a primeira aula"
-        imgUrl="../src/assets/img-dict.png">
+        imgUrl="/assets/img-dict.png">
         <VideoExplainer
           videoSrc="https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/how-to_videos/flashcard-page_COMO_USAR.mp4"
           title="Como Funciona esta Página?"
