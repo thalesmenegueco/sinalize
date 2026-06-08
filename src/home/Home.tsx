@@ -12,7 +12,7 @@ function Home() {
                 title="Cursos"
                 description="Aprenda naturalmente como numa conversa."
                 icon="🎴"
-                link="../../courses.html"
+                link="../../public/courses.html"
                 badgeText="Prática"
             />
 
@@ -20,7 +20,7 @@ function Home() {
                 title="Dicionário"
                 description="Busque uma palavra em português e veja a tradução em sinais."
                 icon="🔍"
-                link="../../dictionary.html"
+                link="../../public/dictionary.html"
                 badgeText="VLibras + INES"
             />
 
@@ -28,7 +28,7 @@ function Home() {
                 title="Artigos"
                 description="Aprenda mais sobre a teoria e a realidade atual da Libras."
                 icon="❓"
-                link="#"
+                link="../../public/articles.html"
                 badgeText="Em Breve"
             /> {/* link="../../articles.html" */}
         </section>

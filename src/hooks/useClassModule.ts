@@ -1,7 +1,7 @@
 // hooks/useClassModule.ts
 import { useMemo } from 'react';
 // O Vite importa arquivos JSON diretamente como objetos/arrays JavaScript.
-import modulesData from '../../public/assets/modules.json'; 
+import modulesData from '../../assets/modules.json'; 
 import type { ClassModule } from '../types/module.ts';
 
 // Fazemos um type assertion para garantir que o TypeScript valide o JSON contra nossa interface.

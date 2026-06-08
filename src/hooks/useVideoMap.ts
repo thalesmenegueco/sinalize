@@ -10,7 +10,7 @@ export function useVideoMap() {
         const fetchMap = async () => {
             try {
                 // No Vite, arquivos na pasta public/ são acessados pela raiz absoluta
-                const response = await fetch('../../public/assets/videos_map.json');
+                const response = await fetch('../../assets/videos_map.json');
                 if (!response.ok) throw new Error("Erro na rede ao buscar json");
                 const data: VideoMap = await response.json();
                 setVideoMap(data);
