@@ -25,7 +25,7 @@ export const ModuleDetails: React.FC<ModuleDetailsProps> = ({ moduleId }) => {
     <article className="module-card">
       <header>
         <h1>{moduleData.title}</h1>
-        <span className="duration-badge">{moduleData.durationInMinutes} min</span>
+        <span className="duration-badge">🕒 {moduleData.durationInMinutes} min</span>
       </header>
       
       <p>{moduleData.description}</p>
@@ -36,7 +36,7 @@ export const ModuleDetails: React.FC<ModuleDetailsProps> = ({ moduleId }) => {
         Seu navegador não suporta a tag de vídeo.
       </video>
   
-      <ul>
+      <ol>
       {/* O método .map() substitui o laço for */}
       {moduleData.classes.map((courseClass) => (
         <li key={courseClass.videoName}>
@@ -48,7 +48,7 @@ export const ModuleDetails: React.FC<ModuleDetailsProps> = ({ moduleId }) => {
           </a>
         </li>
       ))}
-    </ul>
+    </ol>
     </article>
   );
 };

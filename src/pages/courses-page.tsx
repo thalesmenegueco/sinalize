@@ -3,6 +3,7 @@ import PageContent from '../PageContent.tsx'
 import VideoExplainer from '../shared/video-explainer/VideoExplainer.tsx'
 import NavCard from '../shared/nav-card/NavCard.tsx'
 import { ModuleDetails } from '../shared/module-index/ModuleDetails.tsx'
+import pageIcon from '../assets/img-courses.png'
 
 function CoursesPage() {
   return (
@@ -10,7 +11,7 @@ function CoursesPage() {
       <PageContent
         pageTitle="Cursos de Libras"
         description="Cursos com ênfase em comunicação desde a primeira aula"
-        imgUrl="/assets/img-dict.png">
+        imgUrl={pageIcon}>
         <VideoExplainer
           videoSrc="https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/how-to_videos/flashcard-page_COMO_USAR.mp4"
           title="Como Funciona esta Página?"
