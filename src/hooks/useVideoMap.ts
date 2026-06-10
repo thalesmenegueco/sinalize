@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+// import videosData from '../assets/videos_map.json'
 
 export type VideoMap = Record<string, string>;
 
@@ -10,14 +11,14 @@ export function useVideoMap() {
         const fetchMap = async () => {
             try {
                 // No Vite, arquivos na pasta public/ são acessados pela raiz absoluta
-                const response = await fetch('../assets/videos_map.json');
+                const response = await fetch('/videos_map.json');
                 if (!response.ok) throw new Error("Erro na rede ao buscar json");
                 const data: VideoMap = await response.json();
-                setVideoMap(data);
+                setVideoMap(data)
             } catch (error) {
                 console.error("Falha ao carregar o mapa de vídeos:", error);
             } finally {
-                setIsLoading(false);
+                setIsLoading(false)
             }
         };
 
