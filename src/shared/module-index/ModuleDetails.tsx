@@ -36,11 +36,11 @@ export const ModuleDetails: React.FC<ModuleDetailsProps> = ({ moduleId }) => {
         Seu navegador não suporta a tag de vídeo.
       </video>
   
-      <ol>
+      <ol className='text-left list-decimal list-inside'>
       {/* O método .map() substitui o laço for */}
       {moduleData.classes.map((courseClass) => (
         <li key={courseClass.videoName}>
-          <a href={"https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/classes_videos/" + courseClass.videoId + ".mp4"}
+          👉 <a href={"https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/classes_videos/" + courseClass.videoId + ".mp4"}
           target="_blank"
           rel="noopener
           noreferrer">

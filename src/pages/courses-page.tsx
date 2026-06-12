@@ -13,7 +13,7 @@ function CoursesPage() {
         description="Cursos com ênfase em comunicação desde a primeira aula"
         imgUrl={pageIcon}>
         <VideoExplainer
-          videoSrc="https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/how-to_videos/flashcard-page_COMO_USAR.mp4"
+          videoSrc="https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/how-to_videos/courses-page_USAR_COMO.mp4"
           title="Como Funciona esta Página?"
           triggerText="⏯️🤌❓ Como são os cursos"
         />
