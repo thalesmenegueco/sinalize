@@ -2,12 +2,6 @@ import { useSearchParams } from 'react-router-dom';
 import { useModuleById } from '../hooks/useClassModule';
 import { useFlashcardsByIds } from '../hooks/useFlashcards';
 import Flashcard from '../shared/flashcard/Flashcard';
-import type { ClassModule } from '../types/module'
-
-interface searchInfo {
-    moduleId: number;
-    videoId: number;
-}
 
 function ClassStudy() {
     const [searchParams] = useSearchParams();
