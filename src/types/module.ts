@@ -11,3 +11,10 @@ export interface ClassModule {
     flashcardId: number[];
   }[];
 }
+
+export interface Flashcard {
+  flashcardId: number;
+  flashcardUrl: string;
+  portugueseText: string;
+  tags: string[];
+}

@@ -1,6 +1,44 @@
 [
     {
         "flashcardId": 1001,
-        "flashcardUrl":"flashcard-page_voce_saude_bem.mp4"
+        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
+        "portugueseText": "Você está bem?",
+        "tags": ["Cumprimentos", "Básico"]
+    },
+    {
+        "flashcardId": 1002,
+        "flashcardUrl": "flashcard-page_voce_bom-bem___voce_bem.mp4",
+        "portugueseText": "Você está bom?",
+        "tags": ["Cumprimentos", "Básico"]
+    },
+    {
+        "flashcardId": 1003,
+        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
+        "portugueseText": "Como vai?",
+        "tags": ["Cumprimentos", "Social"]
+    },
+    {
+        "flashcardId": 1004,
+        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
+        "portugueseText": "Tudo bem?",
+        "tags": ["Cumprimentos", "Básico"]
+    },
+    {
+        "flashcardId": 1005,
+        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
+        "portugueseText": "Prazer em conhecer",
+        "tags": ["Apresentação", "Social"]
+    },
+    {
+        "flashcardId": 1006,
+        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
+        "portugueseText": "Qual o seu nome?",
+        "tags": ["Apresentação", "Básico"]
+    },
+    {
+        "flashcardId": 1007,
+        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
+        "portugueseText": "Até logo",
+        "tags": ["Despedida", "Básico"]
     }
 ]
