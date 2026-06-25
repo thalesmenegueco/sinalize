@@ -126,7 +126,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
         onClick={toggleFlip}
       >
         <div
-          className={`relative w-full h-full transition-transform duration-600 shadow-lg rounded-2xl ${
+          className={`relative w-full h-full transition-transform duration-[600ms] shadow-lg rounded-2xl ${
             isFlipped ? '[transform:rotateY(180deg)]' : ''
           }`}
           style={{ transformStyle: 'preserve-3d' }}
