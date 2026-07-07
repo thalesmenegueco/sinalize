@@ -2,31 +2,31 @@
     {
         "flashcardId": 1001,
         "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
-        "portugueseText": "Você está bem?",
+        "portugueseText": "Você está bem? (formal)",
         "tags": ["Cumprimentos", "Básico"]
     },
     {
         "flashcardId": 1002,
         "flashcardUrl": "flashcard-page_voce_bom-bem___voce_bem.mp4",
-        "portugueseText": "Tudo bom?",
+        "portugueseText": "Tudo bom? (informal)",
         "tags": ["Cumprimentos", "Básico"]
     },
     {
         "flashcardId": 1003,
         "flashcardUrl": "flashcard-page_eu_nome_(datilologia).mp4",
-        "portugueseText": "Qual o seu nome?",
+        "portugueseText": "Meu nome é ... (EU-NOME___)",
         "tags": ["Cumprimentos", "Social"]
     },
     {
         "flashcardId": 1004,
         "flashcardUrl": "flashcard-page_voce_nome.mp4",
-        "portugueseText": "Qual o seu nome?",
+        "portugueseText": "Qual o seu nome? (VOCÊ-NOME)",
         "tags": ["Cumprimentos", "Básico"]
     },
     {
         "flashcardId": 1005,
         "flashcardUrl": "flashcard-page_voce_eu_(nao)conhecer___eu_(nao)conhecer_voce.mp4",
-        "portugueseText": "Não cohneço você.",
+        "portugueseText": "Não conheço você (VOCÊ-EU-CONHECER-NÃO)",
         "tags": ["Apresentação", "Social"]
     },
     {

@@ -67,7 +67,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
 
   // Componentes de conteúdo
   const videoHTML = (
-    <div className="video-container w-full h-full max-h-[350px] rounded-lg overflow-hidden bg-stone-800 relative z-10">
+    <div className="video-container w-full h-full max-h-87.5 rounded-lg overflow-hidden bg-stone-800 relative z-10">
       <video
         src={videoSrc}
         controls
@@ -90,7 +90,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
       <h2 className="text-teal-dark text-3xl font-bold mb-6">Pratique! 👇</h2>
 
       {/* Toggle de Modos */}
-      <div className="flex flex-col items-center gap-4 mb-8 w-full max-w-[600px]">
+      <div className="flex flex-col items-center gap-4 mb-8 w-full max-w-150">
         <div 
           className="flex items-center bg-white p-2 rounded-full shadow-sm border border-gray-400"
           role="radiogroup" 
@@ -99,9 +99,10 @@ function Flashcard({ flashcards }: FlashcardProps) {
           <button
             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
               mode === 'libras'
-                ? 'bg-teal-main text-white shadow-md'
+                ? 'bg-teal-main shadow-md'
                 : 'bg-transparent text-gray-600'
             }`}
+            style={mode === 'libras' ? { color: 'var(--teal-main)' } : undefined}
             onClick={() => handleModeChange('libras')}
           >
             Libras na Frente
@@ -109,9 +110,10 @@ function Flashcard({ flashcards }: FlashcardProps) {
           <button
             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
               mode === 'pt'
-                ? 'bg-teal-main text-white shadow-md'
+                ? 'bg-teal-main shadow-md'
                 : 'bg-transparent text-gray-600'
             }`}
+            style={mode === 'pt' ? { color: 'var(--teal-main)' } : undefined}
             onClick={() => handleModeChange('pt')}
           >
             Português na Frente
@@ -121,13 +123,13 @@ function Flashcard({ flashcards }: FlashcardProps) {
 
       {/* Flashcard 3D */}
       <div 
-        className="w-full max-w-[600px] h-[500px] cursor-pointer"
+        className="w-full max-w-150 h-125 cursor-pointer"
         style={{ perspective: '1000px' }}
         onClick={toggleFlip}
       >
         <div
-          className={`relative w-full h-full transition-transform duration-[600ms] shadow-lg rounded-2xl ${
-            isFlipped ? '[transform:rotateY(180deg)]' : ''
+          className={`relative w-full h-full transition-transform duration-600 shadow-lg rounded-2xl ${
+            isFlipped ? 'transform:[rotateY(180deg)]' : ''
           }`}
           style={{ transformStyle: 'preserve-3d' }}
         >
@@ -149,7 +151,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
             </div>
 
             {/* Conteúdo baseado no modo */}
-            <div className="flex-grow flex items-center justify-center w-full">
+            <div className="grow flex items-center justify-center w-full">
               {mode === 'libras' ? videoHTML : textHTML}
             </div>
 
@@ -177,7 +179,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
             <div className="mb-4 text-base text-gray-500">
               Seria algo parecido com isso:
             </div>
-            <div className="flex-grow flex items-center justify-center w-full">
+            <div className="grow flex items-center justify-center w-full">
               {mode === 'libras' ? textHTML : videoHTML}
             </div>
           </div>
@@ -185,7 +187,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
       </div>
 
       {/* Controles de Navegação */}
-      <div className="flex flex-col items-center gap-4 mt-6 w-full max-w-[600px]">
+      <div className="flex flex-col items-center gap-4 mt-6 w-full max-w-150">
         <div className="flex justify-between items-center w-full">
           <button
             className="bg-white text-teal-main border-2 border-teal-main px-6 py-3 rounded-lg font-bold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
