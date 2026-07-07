@@ -20,10 +20,17 @@ function CoursesPage() {
         
         <NavCard
           title="Primeiros Sinais"
-          description="Sua primeira conversa em Libras"
+          description="Uma introdução para iniciar uma conversa em Libras"
           icon="👋"
-          badgeText="Básico 1">
+          badgeText="Iniciante 1">
           <ModuleDetails moduleId={1} />
+        </NavCard>
+
+        <NavCard
+          title="Em breve"
+          description="Continue a conversar em Libras"
+          icon="❓"
+          badgeText="Iniciante">
         </NavCard>
 
       </PageContent>

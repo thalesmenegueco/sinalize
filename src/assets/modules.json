@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "title": "Primeira Conversa",
-        "description": "Primeira Conversa em Libras",
+        "title": "Primeiros Sinais",
+        "description": "Primeiros Sinais da Libras para iniciar uma conversa",
         "videoUrl": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/module-intro_videos/module001-intro.mp4",
         "durationInMinutes": 30,
         "classes": [
             {
                 "videoId": 101,
-                "videoName": "Cumprimentos",
+                "videoName": "Cumprimente",
                 "flashcardId": [
                     1001,
                     1002
@@ -16,7 +16,7 @@
             },
             {
                 "videoId": 102,
-                "videoName": "Se apresentar",
+                "videoName": "Se apresente",
                 "flashcardId": [
                     1003,
                     1004,
@@ -25,7 +25,7 @@
             },
             {
                 "videoId": 103,
-                "videoName": "Perguntas (e expressões faciais)",
+                "videoName": "Pergunte + expressão facial",
                 "flashcardId": [
                     1006,
                     1007,

@@ -158,8 +158,8 @@ function Flashcard({ flashcards }: FlashcardProps) {
             {/* Prompt */}
             <div className="mt-6 text-lg text-gray-600 font-medium">
               {mode === 'libras' 
-                ? '🤔💭 Pare e Pense: como é em português?' 
-                : '🤔💭 Pare e Pense: como é em Libras?'}
+                ? '🤔💭 Pare e Pense: como seria em português?' 
+                : '🤔💭 Pare e Pense: como seria em Libras?'}
             </div>
 
             {/* Botão de Resposta */}
