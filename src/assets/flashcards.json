@@ -8,37 +8,43 @@
     {
         "flashcardId": 1002,
         "flashcardUrl": "flashcard-page_voce_bom-bem___voce_bem.mp4",
-        "portugueseText": "Você está bom?",
+        "portugueseText": "Tudo bom?",
         "tags": ["Cumprimentos", "Básico"]
     },
     {
         "flashcardId": 1003,
-        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
-        "portugueseText": "Como vai?",
+        "flashcardUrl": "flashcard-page_eu_nome_(datilologia).mp4",
+        "portugueseText": "Qual o seu nome?",
         "tags": ["Cumprimentos", "Social"]
     },
     {
         "flashcardId": 1004,
-        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
-        "portugueseText": "Tudo bem?",
+        "flashcardUrl": "flashcard-page_voce_nome.mp4",
+        "portugueseText": "Qual o seu nome?",
         "tags": ["Cumprimentos", "Básico"]
     },
     {
         "flashcardId": 1005,
-        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
-        "portugueseText": "Prazer em conhecer",
+        "flashcardUrl": "flashcard-page_voce_eu_(nao)conhecer___eu_(nao)conhecer_voce.mp4",
+        "portugueseText": "Não cohneço você.",
         "tags": ["Apresentação", "Social"]
     },
     {
         "flashcardId": 1006,
-        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
-        "portugueseText": "Qual o seu nome?",
+        "flashcardUrl": "flashcard-page_entender(sim).mp4",
+        "portugueseText": "Entendi",
         "tags": ["Apresentação", "Básico"]
     },
     {
         "flashcardId": 1007,
-        "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
-        "portugueseText": "Até logo",
+        "flashcardUrl": "flashcard-page_conhecer_gostar.mp4",
+        "portugueseText": "Prazer te conhecer.",
         "tags": ["Despedida", "Básico"]
+    },
+    {
+        "flashcardId": 1008,
+        "flashcardUrl": "flashcard-page_perguntar_voce_casa_onde.mp4",
+        "portugueseText": "Onde você mora?",
+        "tags": ["Informações pessoais", "Básico"]
     }
 ]

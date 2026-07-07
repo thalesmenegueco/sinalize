@@ -31,6 +31,7 @@ function App() {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/dictionary" element={<DictionaryPage />} />
           <Route path="/classes" element={<ClassPage />} />
+          {/* <Route path="/articles" element={<ArticlesPage />} /> */}
           {/* Rota de Fallback para exibir um "404 Customizado" no frontend */}
           <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>

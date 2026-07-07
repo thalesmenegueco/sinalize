@@ -17,11 +17,7 @@ function CoursesPage() {
           title="Como Funciona esta Página?"
           triggerText="⏯️🤌❓ Como são os cursos"
         />
-        <VideoExplainer
-          videoSrc="https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/how-to_videos/flashcard-page_COMO_USAR.mp4"
-          title="Como Funciona esta Página?"
-          triggerText="🎴🤌❓ Como usar Flashcards"
-        />
+        
         <NavCard
           title="Primeiros Sinais"
           description="Sua primeira conversa em Libras"
