@@ -1,9 +1,9 @@
 import '../index.css'
 import PageContent from '../PageContent.tsx'
 import Home from '../home/Home.tsx'
-import VideoExplainer from '../shared/video-explainer/VideoExplainer.tsx'
+// import VideoExplainer from '../shared/video-explainer/VideoExplainer.tsx'
 import pageIcon from '../assets/img-home.png'
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 
 function ArticlesPage() {
     return (

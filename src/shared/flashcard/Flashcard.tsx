@@ -87,7 +87,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
 
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto px-4 py-8">
-      <h2 className="text-teal-dark text-3xl font-bold mb-6">Sinalize! 🤟</h2>
+      <h2 className="text-teal-dark text-3xl font-bold mb-6">Pratique! 👇</h2>
 
       {/* Toggle de Modos */}
       <div className="flex flex-col items-center gap-4 mb-8 w-full max-w-[600px]">
