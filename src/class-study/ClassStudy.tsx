@@ -30,6 +30,7 @@ function ClassStudy() {
 
     return (
         <>
+        <h2 className='text-teal-dark text-3xl font-bold mb-6'>{classInfo?.videoName ?? "Aula Extra"}</h2>
             <div className="video-wrapper">
                 <video
                     src={videoSrc}
