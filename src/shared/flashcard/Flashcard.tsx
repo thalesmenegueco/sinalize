@@ -183,11 +183,6 @@ function Flashcard({ flashcards }: FlashcardProps) {
             <div className="grow flex items-center justify-center w-full">
               {mode === 'libras' ? textHTML : videoHTML}
             </div>
-
-            {/* Botão de Voltar */}
-            <button className="mt-4 bg-amber-accent text-white px-8 py-2 rounded-full text-base shadow-md bg-amber-600 hover:font-bold transition-colors">
-              Clique para Virar o Card
-            </button>
           </div>
         </div>
       </div>
@@ -200,7 +195,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
             onClick={prevCard}
             disabled={currentIndex === 0}
           >
-            Anterior
+            Cartão Anterior
           </button>
           <span className="text-gray-600 font-medium">
             {currentIndex + 1} / {flashcards.length}
@@ -210,7 +205,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
             onClick={nextCard}
             disabled={currentIndex === flashcards.length - 1}
           >
-            Próximo
+            Próximo Cartão
           </button>
         </div>
       </div>
