@@ -128,10 +128,11 @@ function Flashcard({ flashcards }: FlashcardProps) {
         onClick={toggleFlip}
       >
         <div
-          className={`relative w-full h-full transition-transform duration-600 shadow-lg rounded-2xl ${
-            isFlipped ? 'transform:[rotateY(180deg)]' : ''
-          }`}
-          style={{ transformStyle: 'preserve-3d' }}
+          className="relative w-full h-full transition-transform duration-600 shadow-lg rounded-2xl"
+          style={{ 
+            transformStyle: 'preserve-3d',
+            transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+          }}
         >
           {/* Face Frontal */}
           <div
@@ -182,6 +183,11 @@ function Flashcard({ flashcards }: FlashcardProps) {
             <div className="grow flex items-center justify-center w-full">
               {mode === 'libras' ? textHTML : videoHTML}
             </div>
+
+            {/* Botão de Voltar */}
+            <button className="mt-4 bg-amber-accent text-white px-8 py-2 rounded-full text-base shadow-md bg-amber-600 hover:font-bold transition-colors">
+              Clique para Virar o Card
+            </button>
           </div>
         </div>
       </div>

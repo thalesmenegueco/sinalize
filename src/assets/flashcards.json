@@ -2,13 +2,13 @@
     {
         "flashcardId": 1001,
         "flashcardUrl": "flashcard-page_voce_saude_bem.mp4",
-        "portugueseText": "Você está bem? (formal)",
+        "portugueseText": "Você está bem? (VOCÊ-SAÚDE-BEM)",
         "tags": ["Cumprimentos", "Básico"]
     },
     {
         "flashcardId": 1002,
         "flashcardUrl": "flashcard-page_voce_bom-bem___voce_bem.mp4",
-        "portugueseText": "Tudo bom? (informal)",
+        "portugueseText": "Tudo bom? (VOCÊ-BOM-BEM)",
         "tags": ["Cumprimentos", "Básico"]
     },
     {
@@ -27,19 +27,19 @@
         "flashcardId": 1005,
         "flashcardUrl": "flashcard-page_voce_eu_(nao)conhecer___eu_(nao)conhecer_voce.mp4",
         "portugueseText": "Não conheço você (VOCÊ-EU-CONHECER-NÃO)",
-        "tags": ["Apresentação", "Social"]
+        "tags": ["Apresentação", "Social", "Básico"]
     },
     {
         "flashcardId": 1006,
         "flashcardUrl": "flashcard-page_entender(sim).mp4",
-        "portugueseText": "Entendi",
+        "portugueseText": "Entendi(ENTENDER)",
         "tags": ["Apresentação", "Básico"]
     },
     {
         "flashcardId": 1007,
         "flashcardUrl": "flashcard-page_conhecer_gostar.mp4",
-        "portugueseText": "Prazer te conhecer.",
-        "tags": ["Despedida", "Básico"]
+        "portugueseText": "Prazer te conhecer. (CONHECER-GOSTAR)",
+        "tags": ["Apresentação", "Básico"]
     },
     {
         "flashcardId": 1008,
