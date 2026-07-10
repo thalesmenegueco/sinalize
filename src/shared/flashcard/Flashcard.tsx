@@ -197,7 +197,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
             Cartão Anterior
           </button>
           <span className="text-gray-600 font-medium">
-            {currentIndex + 1} / {flashcards.length}
+            {currentIndex + 1}/{flashcards.length}
           </span>
           <button
             className="bg-white text-teal-main border-2 border-teal-main px-4 py-3 rounded-lg font-bold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
