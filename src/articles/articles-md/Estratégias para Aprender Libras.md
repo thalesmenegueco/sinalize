@@ -90,3 +90,8 @@ O processo de evolução linguística na modalidade visuoespacial não é linear
 
 ---
 ## Fontes
+- https://youtu.be/3Nc0Pjjv-PQ?is=NDd2PsqGGs-geDtu
+- https://www.palhoca.ifsc.edu.br/materiais/apostila-libras-basico/Apostila_Libras_Basico_IFSC-Palhoca-Bilingue.pdf?hl=pt-BR
+- https://revista.defensoria.df.gov.br/index.php/revista/article/download/71/47/564?hl=pt-BR
+- https://publicacoes.unifal-mg.edu.br/revistas/index.php/tremdeletras/article/download/1361/1097/6387?hl=pt-BR
+- https://revista.uemg.br/sciasls/article/download/6796/4325/26528?hl=pt-BR
