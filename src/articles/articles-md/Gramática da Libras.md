@@ -1,4 +1,4 @@
-# Evolução de Ouvintes na Língua de Sinais
+# Estratégias para Aprender Libras
 *Um guia baseado em evidências sobre as metodologias e atividades mais eficazes para ouvintes alcançarem a fluência comunicativa.*
 
 ---
