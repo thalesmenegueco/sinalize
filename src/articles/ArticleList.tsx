@@ -1,7 +1,7 @@
 import NavCard from "@/shared/nav-card/NavCard"
 
 const articleDict: Record<string, string> = {
-    "Gramática da Libras": "🪧"
+    "Estratégias para Aprender Libras": "📚"
 }
 
 const articles = Object.entries(articleDict).map(([key, value]) => {
