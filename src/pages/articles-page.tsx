@@ -1,9 +1,9 @@
 import '../index.css'
 import PageContent from '../PageContent.tsx'
-import Home from '../home/Home.tsx'
 // import VideoExplainer from '../shared/video-explainer/VideoExplainer.tsx'
 import pageIcon from '../assets/img-home.png'
 // import ReactMarkdown from 'react-markdown';
+import ArticleList from '../articles/ArticleList.tsx'
 
 function ArticlesPage() {
     return (
@@ -20,7 +20,7 @@ function ArticlesPage() {
                     triggerText="🤔❓ O que é isso? "
                 />*/}
 
-                <Home /> {/* Aqui é onde o conteúdo principal será renderizado */}
+                <ArticleList /> {/* Aqui é onde o conteúdo principal será renderizado */}
             </PageContent>
         </>
     )

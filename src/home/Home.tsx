@@ -26,12 +26,21 @@ function Home() {
                 />
             </Link>
 
+            <Link to="/articles-list">
+                <NavCard
+                    title="Artigos"
+                    description="Aprenda mais sobre a teoria e a realidade atual da Libras."
+                    icon="📄"
+                    badgeText="Teoria"
+                />
+            </Link>
+
             <NavCard
-                title="Artigos"
-                description="Aprenda mais sobre a teoria e a realidade atual da Libras."
+                title="Pura Libras"
+                description="Conteúdo escolhido a dedo totalmente em Libras (com tradução)."
                 icon="❓"
                 badgeText="Em Breve"
-            /> {/* link="../../articles.html" */}
+            />
         </section>
     
     </>

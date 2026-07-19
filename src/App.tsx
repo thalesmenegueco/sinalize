@@ -5,7 +5,9 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/home-page.tsx'
 import DictionaryPage from './pages/dictionary-page.tsx'
 import CoursesPage from './pages/courses-page.tsx'
-import ClassPage from './pages/class-page.tsx';
+import ClassPage from './pages/class-page.tsx'
+import ArticlesPage from './pages/articles-page.tsx'
+import ReadArticle from './articles/components/ReadArticle.tsx';
 
 
 function App() {
@@ -31,17 +33,12 @@ function App() {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/dictionary" element={<DictionaryPage />} />
           <Route path="/classes" element={<ClassPage />} />
-          {/* <Route path="/articles" element={<ArticlesPage />} /> */}
+          <Route path="/articles-list" element={<ArticlesPage />} />
+          <Route path="/article" element={<ReadArticle />} />
           {/* Rota de Fallback para exibir um "404 Customizado" no frontend */}
           <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
       </main>
-
-      {/*
-      <Header />
-      {children}
-      <Footer />
-      */}
     </>
   )
 }

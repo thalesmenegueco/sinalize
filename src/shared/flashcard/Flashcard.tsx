@@ -190,7 +190,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
       <div className="flex flex-col items-center gap-4 mt-6 w-full max-w-150">
         <div className="flex justify-between items-center w-full">
           <button
-            className="bg-white text-teal-main border-2 border-teal-main px-4 py-3 rounded-lg font-bold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-white text-teal-main border-2 border-teal-main px-3 py-3 rounded-lg font-bold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={prevCard}
             disabled={currentIndex === 0}
           >
@@ -200,7 +200,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
             {currentIndex + 1}/{flashcards.length}
           </span>
           <button
-            className="bg-white text-teal-main border-2 border-teal-main px-4 py-3 rounded-lg font-bold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-white text-teal-main border-2 border-teal-main px-3 py-3 rounded-lg font-bold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={nextCard}
             disabled={currentIndex === flashcards.length - 1}
           >
