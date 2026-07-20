@@ -48,4 +48,21 @@
             }
         ]
     }
+    {
+        "id": 2,
+        "title": "Conversa cotidiana",
+        "description": "Conversa cotidiana em Libras",
+        "videoUrl": "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/module-intro_videos/module002-intro.mp4",
+        "durationInMinutes": 30,
+        "classes": [
+            {
+                "videoId": 105,
+                "videoName": "Idade",
+                "flashcardId": [
+                    
+                ]
+            }
+            
+        ]
+    }
 ]
