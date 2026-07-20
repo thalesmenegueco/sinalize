@@ -27,10 +27,11 @@ function CoursesPage() {
         </NavCard>
 
         <NavCard
-          title="Em breve"
-          description="Continue a conversar em Libras"
-          icon="❓"
-          badgeText="Iniciante">
+          title="Conversa Cotidiana"
+          description="Continue a conversar"
+          icon="💬"
+          badgeText="Iniciante 2">
+          <ModuleDetails moduleId={2} />
         </NavCard>
 
       </PageContent>
