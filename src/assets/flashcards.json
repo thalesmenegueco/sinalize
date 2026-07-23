@@ -46,5 +46,23 @@
         "flashcardUrl": "flashcard-page_perguntar_voce_casa_onde.mp4",
         "portugueseText": "Onde você mora?",
         "tags": ["Informações pessoais", "Básico"]
+    },
+    {
+        "flashcardId": 1009,
+        "flashcardUrl": "flashcard-page_voce_idade_qual.mp4",
+        "portugueseText": "Qual a sua idade? (VOCÊ-IDADE-QUAL)",
+        "tags": ["Informações pessoais", "Básico"]
+    },
+    {
+        "flashcardId": 1010,
+        "flashcardUrl": "flashcard-page_eu_idade_25.mp4",
+        "portugueseText": "Tenho 25 anos de idade. (EU-IDADE-DOIS-CINCO)",
+        "tags": ["Informações pessoais", "Básico"]
+    },
+    {
+        "flashcardId": 1011,
+        "flashcardUrl": "flashcard-page_voce_idade.mp4",
+        "portugueseText": "Qual a sua idade? (VOCÊ-IDADE...)",
+        "tags": ["Informações pessoais", "Básico"]
     }
 ]
