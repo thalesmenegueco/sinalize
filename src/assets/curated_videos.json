@@ -1,0 +1,19 @@
+[
+    {
+        "title": "POR QUE SOU SURDO?",
+        "videoUrl": "https://www.youtube.com/watch?v=JD1P9HiWUa4",
+        "imageUrl": "https://img.youtube.com/vi/JD1P9HiWUa4/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 5,
+        "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
+    },
+    {
+        "title": "Como é ser surdo?",
+        "videoUrl": "https://www.youtube.com/watch?v=nWPi4H_fiTw",
+        "imageUrl": "https://img.youtube.com/vi/nWPi4H_fiTw/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 10,
+        "tags": ["Com Legenda", "Mão Surd@"]
+    }
+]
+

@@ -8,6 +8,7 @@ import CoursesPage from './pages/courses-page.tsx'
 import ClassPage from './pages/class-page.tsx'
 import ArticlesPage from './pages/articles-page.tsx'
 import ReadArticle from './articles/components/ReadArticle.tsx';
+import PuraLibrasPage from './pages/puralibras-page.tsx';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/classes" element={<ClassPage />} />
           <Route path="/articles-list" element={<ArticlesPage />} />
           <Route path="/article" element={<ReadArticle />} />
+          <Route path="/puralibras" element={<PuraLibrasPage />} />
           {/* Rota de Fallback para exibir um "404 Customizado" no frontend */}
           <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
