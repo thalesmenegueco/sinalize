@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { useVideosByTags } from '../hooks/useVideoFromLibrary.ts';
 import curatedVideosData from '../assets/curated_videos.json';
 import type { CuratedVideo } from '../types/curatedVideo.ts';
