@@ -2,7 +2,7 @@ function Footer() {
     return (
         <>
 
-            <footer className="p-8 text-center text-[#6b7280] text-sm mt-100">
+            <footer className="p-8 text-center text-[#6b7280] text-sm mt-25">
                 <p>2026 Sinalize! — Plataforma de Acessibilidade e Aprendizado.</p>
                 <span>Para desenvolvedores:
                     <a href="https://github.com/thalesmenegueco/sinalize" target="_blank" rel="noopener noreferrer">

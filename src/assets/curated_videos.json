@@ -1,6 +1,6 @@
 [
     {
-        "title": "POR QUE SOU SURDO?",
+        "title": "POR QUE SOU SURDO? • Tainá Borges",
         "videoUrl": "https://www.youtube.com/watch?v=JD1P9HiWUa4",
         "imageUrl": "https://img.youtube.com/vi/JD1P9HiWUa4/hqdefault.jpg",
         "app": "Youtube",
@@ -8,12 +8,35 @@
         "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
     },
     {
-        "title": "Como é ser surdo?",
+        "title": "Como é ser surdo? • Gabriel Isaac",
         "videoUrl": "https://www.youtube.com/watch?v=nWPi4H_fiTw",
         "imageUrl": "https://img.youtube.com/vi/nWPi4H_fiTw/hqdefault.jpg",
         "app": "Youtube",
         "duration": 10,
         "tags": ["Com Legenda", "Mão Surd@"]
+    },
+    {
+        "title": "O QUE É DA? | Libras • Léo Viturinno",
+        "videoUrl": "https://www.youtube.com/watch?v=-3GUQmPyOWQ",
+        "imageUrl": "https://img.youtube.com/vi/-3GUQmPyOWQ/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 11,
+        "tags": ["Com Legenda", "Mão Surd@"]
+    },
+    {
+        "title": "DIFERENÇAS ENTRE A LIBRAS E O PORTUGUÊS BR • Gabriel Isaac",
+        "videoUrl": "https://www.youtube.com/watch?v=7ZRVFthuiUA",
+        "imageUrl": "https://img.youtube.com/vi/7ZRVFthuiUA/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 9,
+        "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
+    },
+    {
+        "title": "DISCURSOS CAPACITISTAS | Libras • Léo Viturinno",
+        "videoUrl": "https://www.youtube.com/watch?v=5avyYcH7wn4",
+        "imageUrl": "https://img.youtube.com/vi/5avyYcH7wn4/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 14,
+        "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
     }
 ]
-
