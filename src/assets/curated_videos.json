@@ -8,7 +8,7 @@
         "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
     },
     {
-        "title": "Como é ser surdo? • Tainé Borges",
+        "title": "Como é ser surdo? • Tainá Borges",
         "videoUrl": "https://www.youtube.com/watch?v=nWPi4H_fiTw",
         "imageUrl": "https://img.youtube.com/vi/nWPi4H_fiTw/hqdefault.jpg",
         "app": "Youtube",
@@ -38,5 +38,13 @@
         "app": "Youtube",
         "duration": 14,
         "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
+    },
+    {
+        "title": "Dicas para quem quiser aprender Libras • Visurdo",
+        "videoUrl": "https://www.youtube.com/watch?v=jlKLUjCmQjo",
+        "imageUrl": "https://img.youtube.com/vi/jlKLUjCmQjo/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 14,
+        "tags": ["Com Legenda", "Mão Surd@"]
     }
 ]
