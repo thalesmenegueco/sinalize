@@ -46,5 +46,21 @@
         "app": "Youtube",
         "duration": 14,
         "tags": ["Com Legenda", "Mão Surd@"]
+    },
+    {
+        "title": "Minha maior virtude é ser Surda | Clarissa Guerretta | TEDxUFRJ",
+        "videoUrl": "https://www.youtube.com/watch?v=Kblfd3VC4oE&t",
+        "imageUrl": "https://img.youtube.com/vi/Kblfd3VC4oE/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 16,
+        "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
+    },
+    {
+        "title": "O que um surdo não pode fazer? | Charley Soares | TEDxUFV",
+        "videoUrl": "https://www.youtube.com/watch?v=E_CTgvIh1Gc",
+        "imageUrl": "https://img.youtube.com/vi/E_CTgvIh1Gc/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 20,
+        "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
     }
 ]
