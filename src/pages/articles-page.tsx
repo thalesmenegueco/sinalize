@@ -1,7 +1,7 @@
 import '../index.css'
 import PageContent from '../PageContent.tsx'
 // import VideoExplainer from '../shared/video-explainer/VideoExplainer.tsx'
-import pageIcon from '../assets/img-home.png'
+import pageIcon from '../assets/articles.png'
 // import ReactMarkdown from 'react-markdown';
 import ArticleList from '../articles/ArticleList.tsx'
 
