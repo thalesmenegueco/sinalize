@@ -170,11 +170,10 @@ function Flashcard({ flashcards }: FlashcardProps) {
 
           {/* Face Traseira */}
           <div
-            className="absolute w-full h-full bg-teal-light rounded-2xl flex flex-col items-center justify-center p-8 text-center border border-gray-100"
+            className="absolute w-full h-full bg-teal-light rounded-2xl flex flex-col items-center justify-center p-8 text-center border border-gray-100 z-0"
             style={{ 
               backfaceVisibility: 'hidden',
-              transform: 'rotateY(180deg)',
-              z-index: 0
+              transform: 'rotateY(180deg)'
             }}
           >
             <div className="mb-4 text-base text-gray-500">
