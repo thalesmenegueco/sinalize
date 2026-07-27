@@ -32,7 +32,7 @@
     {
         "flashcardId": 1006,
         "flashcardUrl": "flashcard-page_entender(sim).mp4",
-        "portugueseText": "Entendi(ENTENDER)",
+        "portugueseText": "Entendi (ENTENDER)",
         "tags": ["Apresentação", "Básico"]
     },
     {
@@ -44,7 +44,7 @@
     {
         "flashcardId": 1008,
         "flashcardUrl": "flashcard-page_perguntar_voce_casa_onde.mp4",
-        "portugueseText": "Onde você mora?",
+        "portugueseText": "Onde você mora? (PERGUNTAR-VOCÊ-CASA-LUGAR)",
         "tags": ["Informações pessoais", "Básico"]
     },
     {
