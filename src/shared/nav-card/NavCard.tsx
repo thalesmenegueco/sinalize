@@ -2,8 +2,8 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
 interface NavCardProps {
-    title: string;
-    description: string;
+    title?: string;
+    description?: string;
     icon: string; // Pode ser um emoji ou um caminho para um ícone SVG
     link?: string;
     badgeText?: string; // Texto opcional para o badge

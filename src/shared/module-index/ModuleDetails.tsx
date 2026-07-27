@@ -51,7 +51,7 @@ export const ModuleDetails: React.FC<ModuleDetailsProps> = ({ moduleId }) => {
   return (
     <article className="module-card">
       <header>
-        <h1>{moduleData.title}</h1>
+        <h2 className="font-bold text-2xl text-[#292524] mb-2">{moduleData.title}</h2>
         <span className="duration-badge">🕒 {moduleData.durationInMinutes} min</span>
       </header>
 

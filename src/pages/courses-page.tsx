@@ -19,16 +19,12 @@ function CoursesPage() {
         />
         
         <NavCard
-          title="Primeiros Sinais"
-          description="Uma introdução para iniciar uma conversa em Libras"
           icon="👋"
           badgeText="Iniciante 1">
           <ModuleDetails moduleId={1} />
         </NavCard>
 
         <NavCard
-          title="Conversa Cotidiana"
-          description="Continue a conversar"
           icon="💬"
           badgeText="Iniciante 2">
           <ModuleDetails moduleId={2} />
