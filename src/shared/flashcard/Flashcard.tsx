@@ -171,8 +171,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
           {/* Face Traseira */}
           <div
             className="absolute w-full h-full bg-teal-light rounded-2xl flex flex-col items-center justify-center p-8 text-center border border-gray-100"
-            style={{ 
-              backfaceVisibility: 'hidden',
+            style={{
               transform: 'rotateY(180deg)'
             }}
           >
