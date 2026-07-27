@@ -173,7 +173,8 @@ function Flashcard({ flashcards }: FlashcardProps) {
             className="absolute w-full h-full bg-teal-light rounded-2xl flex flex-col items-center justify-center p-8 text-center border border-gray-100"
             style={{ 
               backfaceVisibility: 'hidden',
-              transform: 'rotateY(180deg)'
+              transform: 'rotateY(180deg)',
+              z-index: 0
             }}
           >
             <div className="mb-4 text-base text-gray-500">
