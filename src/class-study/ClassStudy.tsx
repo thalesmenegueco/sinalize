@@ -2,6 +2,8 @@ import { useSearchParams } from 'react-router-dom';
 import { useModuleById } from '../hooks/useClassModule';
 import { useFlashcardsByIds } from '../hooks/useFlashcards';
 import Flashcard from '../shared/flashcard/Flashcard';
+import { ModuleDetails } from '../shared/module-index/ModuleDetails.tsx';
+import NavCard from '../shared/nav-card/NavCard.tsx';
 
 function ClassStudy() {
     const [searchParams] = useSearchParams();
@@ -18,7 +20,7 @@ function ClassStudy() {
 
     // Chamada limpa e encapsulada
     const moduleData = useModuleById(moduleId);
-    
+
 
     const classesArray = moduleData?.classes ?? [];
     const classInfo = classesArray.find(item => item.videoId === videoId);
@@ -30,7 +32,7 @@ function ClassStudy() {
 
     return (
         <>
-        <h2 className='text-teal-dark text-3xl font-bold mb-6'>{classInfo?.videoName ?? "Aula Extra"}</h2>
+            <h2 className='text-teal-dark text-3xl font-bold mb-6'>{classInfo?.videoName ?? "Aula Extra"}</h2>
             <div className="video-wrapper">
                 <video
                     src={videoSrc}
@@ -48,6 +50,17 @@ function ClassStudy() {
             {flashcardData && flashcardData.length > 0 && (
                 <Flashcard flashcards={flashcardData} />
             )}
+
+            <hr className="my-6 border-t-2 border-gray-300" />
+
+            {
+                <NavCard
+                    badgeText={'Módulo atual'}
+                    icon="📝"
+                >
+                    <ModuleDetails moduleId={moduleId} />
+                </NavCard>
+            }
         </>
     )
 }
