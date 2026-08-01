@@ -79,13 +79,13 @@
     },
     {
         "flashcardId": 1014,
-        "flashcardUrl": "flashcard-page_eu_familia_tres_mae_pai_eu.mp4",
+        "flashcardUrl": "flashcard-page_casa_eu_familia_tres_mae_pai_eu.mp4",
         "portugueseText": "Tenho uma família de três pessoas: mãe, pai e eu. (EU-FAMÍLIA-TRÊS-MÃE-PAI-EU)",
         "tags": ["Família", "Básico"]
     },
     {
         "flashcardId": 1015,
-        "flashcardUrl": "flashcard-page_casa_pessoas_tres_pai_vo_eu.mp4",
+        "flashcardUrl": "flashcard-page_pessoa_tres_vo_pai_eu.mp4",
         "portugueseText": "Tenho uma casa com três pessoas: pai, avô e eu. (EU-CASA-TRÊS-PAI-AVÔ-EU)",
         "tags": ["Família", "Básico"]
     }
