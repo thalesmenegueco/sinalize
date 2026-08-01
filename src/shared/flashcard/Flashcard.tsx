@@ -37,9 +37,9 @@ function Flashcard({ flashcards }: FlashcardProps) {
   // Função para mudar o modo
   const handleModeChange = (newMode: Mode) => {
     if (mode === newMode) return;
-    
+
     setMode(newMode);
-    
+
     // Se estiver virado, desvira antes de re-renderizar
     if (isFlipped) {
       resetFlipState();
@@ -91,28 +91,26 @@ function Flashcard({ flashcards }: FlashcardProps) {
 
       {/* Toggle de Modos */}
       <div className="flex flex-col items-center gap-4 mb-8 w-full max-w-150">
-        <div 
+        <div
           className="flex items-center bg-white p-2 rounded-full shadow-sm border border-gray-400"
-          role="radiogroup" 
+          role="radiogroup"
           aria-label="Modo de Estudo"
         >
           <button
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-              mode === 'libras'
+            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${mode === 'libras'
                 ? 'bg-teal-main shadow-md'
                 : 'bg-transparent text-gray-600'
-            }`}
+              }`}
             style={mode === 'libras' ? { color: 'var(--teal-main)' } : undefined}
             onClick={() => handleModeChange('libras')}
           >
             Libras na Frente
           </button>
           <button
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-              mode === 'pt'
+            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${mode === 'pt'
                 ? 'bg-teal-main shadow-md'
                 : 'bg-transparent text-gray-600'
-            }`}
+              }`}
             style={mode === 'pt' ? { color: 'var(--teal-main)' } : undefined}
             onClick={() => handleModeChange('pt')}
           >
@@ -122,15 +120,14 @@ function Flashcard({ flashcards }: FlashcardProps) {
       </div>
 
       {/* Flashcard 3D */}
-      <div 
+      <div
         className="w-full max-w-150 h-125 cursor-pointer"
         style={{ perspective: '1000px' }}
         onClick={toggleFlip}
       >
         <div
-          className={`relative w-full h-full transition-transform duration-600 shadow-lg rounded-2xl ${
-            isFlipped ? '[transform:rotateY(180deg)]' : ''
-          }`}
+          className={`relative w-full h-full transition-transform duration-600 shadow-lg rounded-2xl ${isFlipped ? '[transform:rotateY(180deg)]' : ''
+            }`}
           style={{ transformStyle: 'preserve-3d' }}
         >
           {/* Face Frontal */}
@@ -157,8 +154,8 @@ function Flashcard({ flashcards }: FlashcardProps) {
 
             {/* Prompt */}
             <div className="mt-6 text-lg text-gray-600 font-medium">
-              {mode === 'libras' 
-                ? '🤔💭 Pare e Pense: como seria em português?' 
+              {mode === 'libras'
+                ? '🤔💭 Pare e Pense: como seria em português?'
                 : '🤔💭 Pare e Pense: como seria em Libras?'}
             </div>
 
@@ -171,7 +168,7 @@ function Flashcard({ flashcards }: FlashcardProps) {
           {/* Face Traseira */}
           <div
             className="absolute w-full h-full bg-teal-light rounded-2xl flex flex-col items-center justify-center p-8 text-center border border-gray-100 z-0"
-            style={{ 
+            style={{
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)'
             }}

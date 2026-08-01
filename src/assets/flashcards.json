@@ -64,5 +64,29 @@
         "flashcardUrl": "flashcard-page_você_idade.mp4",
         "portugueseText": "Qual a sua idade? (VOCÊ-IDADE...)",
         "tags": ["Informações pessoais", "Básico"]
+    },
+    {
+        "flashcardId": 1012,
+        "flashcardUrl": "flashcard-page_12345678910.mp4",
+        "portugueseText": "1 2 3 4 5 6 7 8 9 10",
+        "tags": ["Fundamentos", "Básico"]
+    },
+    {
+        "flashcardId": 1013,
+        "flashcardUrl": "flashcard-page_1_12_2_56_3_98.mp4",
+        "portugueseText": "1) 12 | 2) 56 | 3) 98",
+        "tags": ["Fundamentos", "Básico"]
+    },
+    {
+        "flashcardId": 1014,
+        "flashcardUrl": "flashcard-page_eu_familia_tres_mae_pai_eu.mp4",
+        "portugueseText": "Tenho uma família de três pessoas: mãe, pai e eu. (EU-FAMÍLIA-TRÊS-MÃE-PAI-EU)",
+        "tags": ["Família", "Básico"]
+    },
+    {
+        "flashcardId": 1015,
+        "flashcardUrl": "flashcard-page_casa_pessoas_tres_pai_vo_eu.mp4",
+        "portugueseText": "Tenho uma casa com três pessoas: pai, avô e eu. (EU-CASA-TRÊS-PAI-AVÔ-EU)",
+        "tags": ["Família", "Básico"]
     }
 ]
