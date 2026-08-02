@@ -1,3 +1,16 @@
+# Sinalize!
+
+Sumário:
+[1 Sobre 🤟](https://github.com/thalesmenegueco/sinalize#sobre)
+[2 Para devs 💻](https://github.com/thalesmenegueco/sinalize#para-devs)
+[3 Do próprio React ⚛️](https://github.com/thalesmenegueco/sinalize#do-pr%C3%B3prio-react-react--typescript--vite)
+
+## Sobre
+
+O projeto surgiu com vários pedidos para ensinar como conversar com Surdos.
+Há milhões de surdos no Brasil, e muitos deles sinalizam Libras. Há alguns sites onde se ensina Libras, mas a maioria é difícil de usar ou só cursos ou apenas um dicionário, ou são pagos. 
+Este site é para todos que quiserem estar prontos para ter uma conversa básico com Surdos, de graça.  
+
 ## Para devs
 
 1. Para instalar as dependências, use `npm install`
