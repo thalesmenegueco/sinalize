@@ -1,3 +1,9 @@
+Voltar à [lista de artigos](https://sinalize.org/articles-list)
+
+✍️👤 Autor(a): Thales Menegueço
+
+🖹👀 Última revisão: 02/08/2026
+
 # Estratégias para Aprender Libras
 *Um guia baseado em evidências sobre as metodologias e atividades mais eficazes para ouvintes alcançarem a fluência comunicativa.*
 
@@ -16,7 +22,7 @@ Esta seção estabelece o fundamento do aprendizado de uma língua de modalidade
 | Uso do Espaço | 15% |
 
 > 🧠 **A Quebra de Paradigma**
-> Para o ouvinte, o maior desafio não é memorizar sinais, mas transferir a atenção do canal auditivo para o visual. A expressão facial e corporal constitui mais de 40% da gramática da língua.
+> Para o ouvinte, o maior desafio não é memorizar sinais, mas **transferir a atenção do canal auditivo para o visual**. A *expressão facial e corporal* constitui mais de 40% da gramática da língua.
 
 ### Habilidades Principais Desenvolvidas
 * **👁️ Percepção Visual**: Desenvolvimento da visão periférica e leitura não-manual.

@@ -3,7 +3,7 @@ function Footer() {
         <>
 
             <footer className="p-8 text-center text-[#6b7280] text-sm mt-25">
-                <p>2026 Sinalize! — Plataforma de Acessibilidade e Aprendizado.</p>
+                <p>2026 Sinalize! — Plataforma de Aprendizado Acessível</p>
                 <span>Para desenvolvedores:
                     <a href="https://github.com/thalesmenegueco/sinalize" target="_blank" rel="noopener noreferrer">
                         <span className="text-[#0d9488] hover:underline hover:text-[#0f766e]"> repositório no GitHub</span>

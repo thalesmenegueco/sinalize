@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import Header from '../../shared/header/Header'
+import Footer from '../../shared/footer/Footer'
 
 // Load all markdown files using Vite's import.meta.glob
 // The '?raw' query parameter imports the file content as a string
@@ -63,16 +65,17 @@ function ReadArticle() {
 
   return (
     <>
+      <Header />
       {/* Depois adicionar a opção o vídeo de Libras */}
 
-      <article className="prose prose-lg prose-slate max-w-none px-8 py-8 mx-auto">
+      <article className="w-[90vw] prose prose-lg prose-slate max-w-none px-8 py-8 mx-auto">
         {/* 3. Render raw Markdown text to structured semantic elements */}
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}>
           {markdown}
         </ReactMarkdown>
       </article>
-
+      <Footer />
     </>
   );
 }
