@@ -2,6 +2,8 @@ import '../index.css'
 import PageContent from '../PageContent.tsx'
 import Dictionary from '../dictionary/Dictionary.tsx'
 import VideoExplainer from '../shared/video-explainer/VideoExplainer.tsx'
+import NavCard from '../shared/nav-card/NavCard.tsx'
+import FutureFeatCard from '../shared/future-features-card/FutureFeaturesCard'
 import pageIcon from '../assets/img-dict.png'
 
 function DictionaryPage() {
@@ -17,6 +19,15 @@ function DictionaryPage() {
           triggerText="🤌❓ Como usar? "
         />
         <Dictionary /> {/* Aqui é onde o conteúdo principal será renderizado */}
+        <NavCard 
+        icon="🔗"
+        title="Dicionário INES"
+        description="Dicionário Oficial do Instituto Nacional de Educação de Surdos"
+        link="https://dicionario.ines.gov.br/"
+        />
+
+        <FutureFeatCard />
+        
       </PageContent>
     </>
   )

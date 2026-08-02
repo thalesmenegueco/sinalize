@@ -3,7 +3,6 @@ import { useVideoMap } from '../hooks/useVideoMap'
 import { SearchBar } from '../shared/search-bar/SearchBar'
 import { ActiveTranslation } from '../shared/active-translation/ActiveTranslation'
 import { VideoTranslation } from '../shared/video-translation/VideoTranslation'
-import FutureFeatCard from '../shared/future-features-card/FutureFeaturesCard'
 
 const Dictionary = () => {
     const [currentWord, setCurrentWord] = useState<string | null>(null)
@@ -25,8 +24,6 @@ const Dictionary = () => {
                         <VideoTranslation word={currentWord} videoMap={videoMap} />
                     </>
                 )}
-
-                <FutureFeatCard />
             </div>
         </>
     )
