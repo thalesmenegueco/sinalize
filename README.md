@@ -1,8 +1,11 @@
 # Sinalize!
 
 Sumário:
+
 [1 Sobre 🤟](https://github.com/thalesmenegueco/sinalize#sobre)
+
 [2 Para devs 💻](https://github.com/thalesmenegueco/sinalize#para-devs)
+
 [3 Do próprio React ⚛️](https://github.com/thalesmenegueco/sinalize#do-pr%C3%B3prio-react-react--typescript--vite)
 
 ## Sobre
