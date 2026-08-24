@@ -68,11 +68,16 @@
             },
             {
                 "videoId": 106,
-                "videoName": "Lugar e Família",
+                "videoName": "Casa e Família",
                 "flashcardId": [
                     1014,
                     1015
                 ]
+            },
+            {
+                "videoId": 107,
+                "videoName": "Trabalhar e Estudar",
+                "flashcardId": []
             }
             
         ]
