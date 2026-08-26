@@ -88,5 +88,30 @@
         "flashcardUrl": "flashcard-page_pessoa_tres_vo_pai_eu.mp4",
         "portugueseText": "Tenho uma casa com três pessoas: pai, avô e eu. (EU-CASA-TRÊS-PAI-AVÔ-EU)",
         "tags": ["Família", "Básico"]
+    },
+    {
+        "flashcardId": 1016,
+        "flashcardUrl": "flashcard-page_sua_escola_lugar.mp4",
+        "portugueseText": "Onde é sua escola? (SUA-ESCOLA-LUGAR)",
+        "tags": ["Vida", "Básico"]
+    },
+    {
+        "flashcardId": 1017,
+        "flashcardUrl": "flashcard-page_pessoa_voce-trabalhar-lugar.mp4",
+        "portugueseText": "Onde você trabalha?
+(VOCÊ-TRABALHAR-LUGAR)",
+        "tags": ["Vida", "Básico"]
+    },
+    {
+        "flashcardId": 1018,
+        "flashcardUrl": "flashcard-page_voce_trabalhar_o-que.mp4",
+        "portugueseText": "O quê você faz no seu trabalho? (VOCÊ-TRABALHAR-O_QUÊ)",
+        "tags": ["Vida", "Básico"]
+    },
+    {
+        "flashcardId": 1019,
+        "flashcardUrl": "flashcard-page_voce_trabalhar_estudar_esse_esse.mp4",
+        "portugueseText": "Você trabalha ou estuda? (VOCÊ-TRABALHAR-ESTUDAR-ESSE-ESSE)",
+        "tags": ["Vida", "Básico"]
     }
 ]
