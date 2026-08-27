@@ -51,7 +51,7 @@ function ClassStudy() {
                 <Flashcard flashcards={flashcardData} />
             )}
 
-            <hr className="my-6 h-px border-0 bg-gray-300" />
+            <div className="my-6 h-px bg-gray-300" />
 
             {
                 <NavCard
