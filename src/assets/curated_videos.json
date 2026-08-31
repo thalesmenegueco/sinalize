@@ -62,5 +62,29 @@
         "app": "Youtube",
         "duration": 20,
         "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
+    },
+    {
+        "title": "O DIÁRIO DE ANNE FRANK ft. Daniella Martins | Beto Castejon",
+        "videoUrl": "https://www.youtube.com/watch?v=_yORgIoB0Ak",
+        "imageUrl": "https://img.youtube.com/vi/_yORgIoB0Ak/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 33,
+        "tags": ["Com Legenda", "Mão Surd@", "Com Áudio"]
+    },
+    {
+        "title": "GUERRA FRIA: CORRIDA ARMAMENTISTA | Beto Castejon",
+        "videoUrl": "https://www.youtube.com/watch?v=VVVgzItjazs",
+        "imageUrl": "https://img.youtube.com/vi/VVVgzItjazs/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 25,
+        "tags": ["Com Legenda", "Mão Surd@"]
+    },
+    {
+        "title": "10 dicas para um bom vídeo em Libras | SeTILS UFSCar",
+        "videoUrl": "https://www.youtube.com/watch?v=CFyRHlFM2nM",
+        "imageUrl": "https://img.youtube.com/vi/CFyRHlFM2nM/hqdefault.jpg",
+        "app": "Youtube",
+        "duration": 7,
+        "tags": ["Com Legenda", "Com Áudio"]
     }
 ]
