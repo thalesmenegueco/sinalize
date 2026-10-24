@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useMemo, useState } from 'react';
 import type { VideoMap } from '../../hooks/useVideoMap';
 
 interface VideoTranslationProps {
@@ -8,35 +8,50 @@ interface VideoTranslationProps {
 
 type VideoStatus = 'loading' | 'error' | 'success';
 
+const R2_BASE_URL = "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/sinalize-public-project";
+
 const normalizeWord = (str: string) => 
   str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
+// Resolve a URL do vídeo para a palavra pesquisada.
+// Retorna null quando a palavra não existe no mapa (estado de erro).
+function resolveVideoUrl(word: string, videoMap: VideoMap): string | null {
+  const normalized = normalizeWord(word);
+  let finalWord = normalized;
+  let videoId = videoMap[finalWord];
+
+  // Fallback do número 1
+  if (!videoId) {
+    finalWord = `${normalized}1`;
+    videoId = videoMap[finalWord];
+  }
+
+  if (!videoId) return null;
+
+  return `${R2_BASE_URL}/${finalWord}__${videoId}.mp4`;
+}
+
 export function VideoTranslation({ word, videoMap }: VideoTranslationProps) {
-  const [status, setStatus] = useState<VideoStatus>('loading');
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  // URL derivada: recalcula apenas quando a palavra ou o mapa mudam,
+  // sem precisar de setState dentro de um efeito.
+  const videoUrl = useMemo(
+    () => (word ? resolveVideoUrl(word, videoMap) : null),
+    [word, videoMap]
+  );
 
-  useEffect(() => {
-    if (!word) return;
-    setStatus('loading');
+  // Estado de mídia atrelado à URL atual. Como cada URL só pode estar em um
+  // estado (carregando / falhou / carregou), guardamos a URL e comparamos,
+  // evitando reset manual de estado a cada nova busca.
+  const [loadedUrl, setLoadedUrl] = useState<string | null>(null);
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
 
-    const normalized = normalizeWord(word);
-    let finalWord = normalized;
-    let videoId = videoMap[finalWord];
-
-    // Fallback do número 1
-    if (!videoId) {
-      finalWord = `${normalized}1`;
-      videoId = videoMap[finalWord];
-    }
-
-    if (!videoId) {
-      setStatus('error');
-      return;
-    }
-
-    const baseUrl = "https://pub-53c058da4b9543a8b580f5adffb6a867.r2.dev/sinalize-public-project";
-    setVideoUrl(`${baseUrl}/${finalWord}__${videoId}.mp4`);
-  }, [word, videoMap]);
+  const status: VideoStatus = !videoUrl
+    ? 'error'
+    : failedUrl === videoUrl
+      ? 'error'
+      : loadedUrl === videoUrl
+        ? 'success'
+        : 'loading';
 
   if (!word) return null;
 
@@ -81,8 +96,8 @@ export function VideoTranslation({ word, videoMap }: VideoTranslationProps) {
             muted
             playsInline
             preload="none"
-            onCanPlay={() => setStatus('success')}
-            onError={() => setStatus('error')}
+            onCanPlay={() => setLoadedUrl(videoUrl)}
+            onError={() => setFailedUrl(videoUrl)}
           />
         )}
       </div>
